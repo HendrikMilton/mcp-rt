@@ -127,18 +127,43 @@ const thinEvenly = (chunks: {section: string; text: string}[]): {section: string
 };
 
 /**
- * Statute citations, for the `norm` filter. Estonian decisions cite either
- * "<act abbreviation> § 35 lg 2 p 1" or, for EU law, "IKÜM art 15 lg 1".
- * Stored as a distinct, frequency-ordered list rather than every occurrence.
+ * Statute citations, for the `norm` filter.
+ *
+ * Captured to subsection precision — "AvTS § 35 lg 1 p 11", not just "AvTS § 35". The coarse form
+ * made the filter unusable for the question lawyers actually ask: § 35 has twelve grounds and they
+ * are different rules, so a lawyer looking for p 11 had to fall back to full-text search and hope.
+ *
+ * Both forms are kept for the same citation, so a `norm` filter matching on substring still works
+ * at either precision — searching "AvTS § 35" continues to find a decision that only ever cites
+ * "§ 35 lg 1 p 11". Narrowing what an existing search returns would be the worse failure.
+ *
+ * Superscripted paragraphs (KarS § 157²) are common in Estonian statutes and are a different
+ * offence from the unsuperscripted one, so the index keeps them apart.
  */
-const CITATION_RE = /\b([A-ZÄÖÜÕ][A-ZÄÖÜÕa-zäöüõ]{1,9})\s*(?:§|art\.?)\s*(\d+[0-9¹²³]*)/g;
+const SUPERSCRIPT_DIGITS = '\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079';
 
-export const extractNorms = (text: string, limit = 25): string => {
+/** "157 3" -> "157\u00b3"; an already-superscripted or plain number is returned unchanged. */
+const superscriptTail = (num: string): string => {
+	const detached = num.match(/^(\d+)\s+(\d)$/);
+	if (detached) return detached[1] + SUPERSCRIPT_DIGITS[Number(detached[2])];
+	return num.replace(/\s+/g, '');
+};
+
+const CITATION_RE =
+	/\b([A-ZÄÖÜÕ][A-ZÄÖÜÕa-zäöüõ]{1,9})\s*(?:§|art\.?)\s*(\d+(?:[¹²³⁴-⁹]|\s\d(?=\s|$))?)((?:\s*(?:lg|lõige)\s*\d+)?(?:\s*(?:p|punkt)\s*\d+)?)/g;
+
+export const extractNorms = (text: string, limit = 40): string => {
 	const counts = new Map<string, number>();
-	for (const [, act, num] of text.matchAll(CITATION_RE)) {
+	for (const [, act, num, rest] of text.matchAll(CITATION_RE)) {
 		const sep = /^(IKÜM|EIÕK|ELTL|ELPH)$/.test(act) ? 'art' : '§';
-		const key = `${act} ${sep} ${num}`;
-		counts.set(key, (counts.get(key) ?? 0) + 1);
+		// PDF extraction renders a superscript as a detached plain digit ("§ 157 3"). Joining it
+		// naively gives "§ 1573", naming a provision that does not exist — so the trailing digit is
+		// restored as a superscript, which is how the statute and the lawyer both write it.
+		const base = `${act} ${sep} ${superscriptTail(num)}`;
+		counts.set(base, (counts.get(base) ?? 0) + 1);
+
+		const detail = rest.trim().replace(/\s+/g, ' ').replace(/lõige/g, 'lg').replace(/punkt/g, 'p');
+		if (detail) counts.set(`${base} ${detail}`, (counts.get(`${base} ${detail}`) ?? 0) + 1);
 	}
 	return [...counts.entries()]
 		.sort((a, b) => b[1] - a[1])
