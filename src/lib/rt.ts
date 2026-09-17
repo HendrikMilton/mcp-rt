@@ -98,9 +98,23 @@ const MENETLUS_PATTERNS: [RegExp, Menetlus][] = [
 	[/põhiseadus|pohiseadus/i, 'pohiseadus'],
 ];
 
-export const menetlusOf = (label: string): Menetlus => {
+/**
+ * Case numbers encode the procedure in their first segment — 1-25-2883/69 is criminal — and unlike
+ * `menetlusLiikKlVaartus` they are present on every decision. That field is only populated
+ * reliably for Riigikohus, so trusting it alone labelled most of the maakohus and ringkonnakohus
+ * bulk "muu" and made the filter useless for exactly the decisions there are most of.
+ */
+const MENETLUS_BY_NR_PREFIX: Record<string, Menetlus> = {
+	'1': 'kriminaal',
+	'2': 'tsiviil',
+	'3': 'haldus',
+	'4': 'vaarteo',
+	'5': 'pohiseadus',
+};
+
+export const menetlusOf = (label: string, nr = ''): Menetlus => {
 	for (const [re, m] of MENETLUS_PATTERNS) if (re.test(label)) return m;
-	return 'muu';
+	return MENETLUS_BY_NR_PREFIX[nr.trim()[0] ?? ''] ?? 'muu';
 };
 
 /** Normalise one search hit. `channel` records which seed found it, for later recall analysis. */
@@ -121,7 +135,7 @@ export const toCandidate = (r: RawResult, channel: string): Candidate | null => 
 		fileId: r.avalikustatudFailiId,
 		court,
 		tier: tierOf(court),
-		menetlus: menetlusOf(r.menetlusLiikKlVaartus ?? ''),
+		menetlus: menetlusOf(r.menetlusLiikKlVaartus ?? '', r.kohtuasjaNumber ?? ''),
 		date,
 		year: Number(date.slice(0, 4)) || 0,
 		categories: [...new Set(cats)],

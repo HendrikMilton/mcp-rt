@@ -15,7 +15,7 @@ import {EMBED_BATCH, EMBED_DIM, embedBatch} from '../lib/bedrock';
 import {chunkDocument, chunkText, extractNorms} from '../lib/chunk';
 import {MAX_CANDIDATES, LimitExceeded, spend} from '../lib/limits';
 import {mapPool} from '../lib/pool';
-import {decisionUrl, tierOf} from '../lib/rt';
+import {decisionUrl, menetlusOf, tierOf} from '../lib/rt';
 import {readIndex, writeIndex} from '../lib/store';
 import type {Candidate, Chunk, Doc, Verdict} from '../types';
 import {crawl} from './crawl';
@@ -57,7 +57,10 @@ const toDoc = (c: Candidate, v: Verdict, text: string, pages?: number): Doc => (
 	// Re-derived rather than trusted from the pool file: a pool written by an older crawler may
 	// carry tiers from a looser pattern than the one in rt.ts today.
 	tier: tierOf(c.court),
-	menetlus: c.menetlus,
+	// A pool written by an older crawler stored 'muu' wherever RT left menetlusLiikKlVaartus empty,
+	// which is most of the maakohus and ringkonnakohus bulk. Fall back to the case-number prefix
+	// rather than re-crawl for a field the number already encodes.
+	menetlus: c.menetlus === 'muu' ? menetlusOf('', c.nr) : c.menetlus,
 	date: c.date,
 	year: c.year,
 	categories: c.categories,
