@@ -1,0 +1,29 @@
+{
+  "name": "mcp-rt",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.699.0",
+    "@aws-sdk/client-s3": "^3.699.0",
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "@types/node": "^20.11.0",
+    "@types/pdf-parse": "^1.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:lambda": "./scripts/build-lambda.sh",
+    "crawl": "ts-node src/ingest/crawl.ts",
+    "fetch": "ts-node src/ingest/fetch.ts",
+    "classify": "ts-node src/ingest/classify.ts",
+    "ingest": "ts-node src/ingest/build.ts",
+    "audit": "ts-node src/ingest/audit.ts",
+    "mine": "ts-node src/ingest/mine.ts",
+    "verify": "ts-node src/ingest/verify.ts"
+  }
+}

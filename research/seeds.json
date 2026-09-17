@@ -1,0 +1,437 @@
+{
+ "vocabulary": [
+  "isikuandme*",
+  "andmekaitse*",
+  "andmesubjekt*",
+  "privaatsus*",
+  "eraelu puutumatus*",
+  "delikaatse*",
+  "IKÜM*",
+  "üldmäärus*",
+  "GDPR",
+  "videovalv*",
+  "jälgimisseade*",
+  "vastutav töötleja*",
+  "volitatud töötleja*",
+  "terviseandme*",
+  "andmetöötlus*",
+  "andmekogu*",
+  "profileerimi*",
+  "isikuandmete kaitse seadus*",
+  "Andmekaitse Inspektsioon*"
+ ],
+ "paragraphs": {
+  "AvTS § 35": 317,
+  "KrMS § 297": 261,
+  "IKS § 4": 204,
+  "AvTS § 3": 190,
+  "AvTS § 23": 183,
+  "KrMS § 296": 158,
+  "KrMS § 64": 143,
+  "IKS § 11": 133,
+  "IKS § 10": 122,
+  "KrMS § 305": 105,
+  "IKS § 14": 91,
+  "AvTS § 5": 89,
+  "KrMS § 214": 86,
+  "KrMS § 73": 77,
+  "AvTS § 4": 73,
+  "AvTS § 38": 63,
+  "IKS § 24": 61,
+  "AvTS § 28": 57,
+  "AvTS § 9": 55,
+  "AvTS § 46": 49,
+  "IKS § 21": 46,
+  "AvTS § 36": 44,
+  "KrMS § 152": 42,
+  "KrMS § 292": 39,
+  "IKS § 56": 38,
+  "AvTS § 34": 34,
+  "KrMS § 100": 33,
+  "IKS § 25": 31,
+  "KrMS § 508": 23,
+  "IKS § 15": 23,
+  "AvTS § 39": 21,
+  "KrMS § 197": 19,
+  "AvTS § 8": 17,
+  "IKS § 20": 16,
+  "IKS § 23": 16,
+  "AvTS § 45": 15,
+  "IKS § 28": 14,
+  "KrMS § 150": 13,
+  "IKS § 33": 13,
+  "KrMS § 320": 12,
+  "AvTS § 41": 12,
+  "AvTS § 51": 11,
+  "IKS § 16": 10,
+  "IKS § 27": 10,
+  "KrMS § 500": 9,
+  "IKS § 17": 9,
+  "IKS § 22": 9,
+  "AvTS § 29": 8,
+  "KrMS § 169": 7,
+  "AvTS § 30": 7,
+  "AvTS § 40": 7,
+  "IKS § 26": 7,
+  "IKS § 32": 7,
+  "KrMS § 221": 5,
+  "AvTS § 11": 5,
+  "KrMS § 220": 4,
+  "IKS § 34": 4,
+  "AvTS § 52": 3,
+  "IKS § 38": 3,
+  "IKS § 44": 3,
+  "KrMS § 166": 2,
+  "AvTS § 42": 2,
+  "AvTS § 43": 2,
+  "KrMS § 168": 1,
+  "KrMS § 348": 1,
+  "KrMS § 467": 1,
+  "IKS § 35": 1,
+  "IKS § 43": 1,
+  "IKS § 46": 1
+ },
+ "taxonomy": [
+  {
+   "path": "Eraõigus -> Võlaõigus -> deliktiõigus -> ebaõigete andmete ümberlükkamise nõue",
+   "kood": "206108829"
+  },
+  {
+   "path": "Eraõigus -> Tööõigus -> töötaja õigused, kohustused ja vastutus -> saladuse hoidmise kohustus",
+   "kood": "342368211"
+  },
+  {
+   "path": "Eraõigus -> Konkurentsiõigus -> ärisaladus",
+   "kood": "206109203"
+  },
+  {
+   "path": "Eraõigus -> Tsiviilkohtumenetlus -> hagita menetlus -> avalikult kasutatavale teele juurdepääsu ja tehnorajatise talumise asjad",
+   "kood": "206111986"
+  },
+  {
+   "path": "Eraõigus -> Tsiviilkohtumenetlus -> hagita menetlus -> osanike ja aktsionäride teabenõue",
+   "kood": "206112704"
+  },
+  {
+   "path": "Haldusõigus -> Vangistus -> vanglaväline suhtlemine -> juurdepääs õigusaktidele",
+   "kood": "206110786"
+  },
+  {
+   "path": "Haldusõigus -> Vangistus -> eelvangistus -> juurdepääs õigusaktidele",
+   "kood": "206110748"
+  },
+  {
+   "path": "Haldusõigus -> Keskkond -> teave, kaasamine ja juurdepääs õigusemõistmisele keskkonnaasjades ",
+   "kood": "206111435"
+  },
+  {
+   "path": "Haldusõigus -> Struktuuritoetus -> toetusnõuete rikkumine -> valeandmete või võltsitud tõendite esitamine",
+   "kood": "340244119"
+  },
+  {
+   "path": "Haldusõigus -> Riigisaladus ja salastatud välisteave",
+   "kood": "255092861"
+  },
+  {
+   "path": "Haldusõigus -> Riigisaladus ja salastatud välisteave -> riigisaladus",
+   "kood": "255092862"
+  },
+  {
+   "path": "Haldusõigus -> Riigisaladus ja salastatud välisteave -> riigisaladus -> riigisaladuse kaitse",
+   "kood": "255092863"
+  },
+  {
+   "path": "Haldusõigus -> Riigisaladus ja salastatud välisteave -> riigisaladus -> riigisaladuse kaitse -> juurdepääs riigisaladusele",
+   "kood": "255092864"
+  },
+  {
+   "path": "Haldusõigus -> Riigisaladus ja salastatud välisteave -> riigisaladus -> riigisaladuse kaitse -> juurdepääs riigisaladusele -> riigisaladusele juurdepääsuloa andmine ja selle kehtivuse pikendamine",
+   "kood": "255092865"
+  },
+  {
+   "path": "Haldusõigus -> Riigisaladus ja salastatud välisteave -> riigisaladus -> riigisaladuse kaitse -> juurdepääs riigisaladusele -> riigisaladusele juurdepääsuloa andmisest ja selle kehtivuse pikendamisest keeldumine",
+   "kood": "255092866"
+  },
+  {
+   "path": "Haldusõigus -> Riigisaladus ja salastatud välisteave -> salastatud välisteave",
+   "kood": "255092867"
+  },
+  {
+   "path": "Haldusõigus -> Registrid, andmekogud ja statistika",
+   "kood": "206110163"
+  },
+  {
+   "path": "Haldusõigus -> Avalik teave ja märgukiri -> avalik teave -> teabenõudja",
+   "kood": "206112587"
+  },
+  {
+   "path": "Haldusõigus -> Avalik teave ja märgukiri -> avalik teave -> teabevaldaja",
+   "kood": "206110184"
+  },
+  {
+   "path": "Haldusõigus -> Avalik teave ja märgukiri -> avalik teave -> teabenõude täitmine",
+   "kood": "206110185"
+  },
+  {
+   "path": "Haldusõigus -> Haldusmenetlus -> haldusmenetluse mõiste ja üldpõhimõtted -> haldusmenetluse põhimõtted -> avalikkus ja andmekaitse ",
+   "kood": "357020926"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse",
+   "kood": "206110127"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> Andmekaitse Inspektsiooni järelevalve",
+   "kood": "206111378"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> isikuandmete töötlemise põhimõtted",
+   "kood": "345640176"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> isikuandmete töötlemise põhimõtted -> usaldusväärsus ja konfidentsiaalsus ",
+   "kood": "345640834"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> isikuandmete töötlemise põhimõtted -> võimalikult väheste andmete kogumine ",
+   "kood": "345640833"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> andmesubjekti õigused -> õigus andmete kustutamisele ",
+   "kood": "345455411"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> andmesubjekti õigused -> õigus andmete parandamisele ",
+   "kood": "345455410"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> andmesubjekti õigused -> õigus tutvuda enda isikuandmetega ",
+   "kood": "345455408"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> isikuandmete mõiste",
+   "kood": "206110128"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> isikuandmete mõiste -> eriliiki isikuandmed",
+   "kood": "206110129"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> isikuandmete töötlemine",
+   "kood": "206110130"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> isikuandmete töötlemine -> isikuandmete avalikustamine",
+   "kood": "206111630"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> isikuandmete töötlemine -> isikuandmete avalikustamine -> eriliiki isikuandmete avalikustamine",
+   "kood": "284447796"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> isikuandmete töötlemine -> isikuandmete avalikustamine -> isikuandmete korduv avalikustamine",
+   "kood": "206111961"
+  },
+  {
+   "path": "Haldusõigus -> Isikuandmete kaitse -> isikuandmete töötlemine -> isikuandmete edastamine",
+   "kood": "206111632"
+  },
+  {
+   "path": "Haldusõigus -> Maksud -> tollimaks -> deklarandi õigused ja kohustused -> andmete esitamise kohustus",
+   "kood": "206110341"
+  },
+  {
+   "path": "Haldusõigus -> Sisejulgeolek -> jälitustegevus",
+   "kood": "206110267"
+  },
+  {
+   "path": "Haldusõigus -> Sisejulgeolek -> jälitustegevus -> jälitusteave",
+   "kood": "206110268"
+  },
+  {
+   "path": "Haldusõigus -> Maksukorraldus -> maksukontroll -> tõendid -> tõendite kogumine -> teabe nõudmine asutustelt ja andmekogudest",
+   "kood": "206110470"
+  },
+  {
+   "path": "Haldusõigus -> Maksukorraldus -> maksusaladus",
+   "kood": "206110473"
+  },
+  {
+   "path": "Haldusõigus -> Halduskohtumenetlus -> tõendamine -> tõendid -> riigisaladus ja salastatud välisteave",
+   "kood": "220898693"
+  },
+  {
+   "path": "Konstitutsiooniõigus -> Põhiseadus -> Põhiõigused, vabadused ja kohustused (II ptk) -> sõnumisaladus (§ 43)",
+   "kood": "206112277"
+  },
+  {
+   "path": "Konstitutsiooniõigus -> Põhiseadus -> Põhiõigused, vabadused ja kohustused (II ptk) -> eraelu puutumatus (§ 26)",
+   "kood": "206112298"
+  },
+  {
+   "path": "Konstitutsiooniõigus -> Põhiseadus -> Põhiõigused, vabadused ja kohustused (II ptk) -> õigused informatsioonile (§ 44) -> õigus tutvuda enda kohta kogutud andmetega (§ 44 lg 3 ja 4)",
+   "kood": "248994858"
+  },
+  {
+   "path": "Konstitutsiooniõigus -> Valimised ja rahvahääletus -> elektrooniline hääletamine -> ligipääs elektroonilisel hääletamisel kogutud andmetele",
+   "kood": "343186037"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> tõend ja tõendamine -> andmete nõudmine sideettevõtjalt",
+   "kood": "375421345"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> üldsätted -> isikuandmete töötlemine kriminaalmenetluses",
+   "kood": "248998860"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> kohtumenetlus maakohtus -> kohtulik uurimine -> teabesalvestise, asitõendi või dokumendi esitamine tõendina",
+   "kood": "206109770"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> kohtumenetlus maakohtus -> kohtuotsuse tegemine -> kohtu nõupidamissaladus",
+   "kood": "206109822"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> kohtueelne menetlus -> kohtueelse menetluse üldtingimused -> kohtueelse menetluse andmete avaldamine",
+   "kood": "206109753"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> kohtueelne menetlus -> kohtueelse menetluse lõpuleviimine -> andmete nõudmine",
+   "kood": "206109845"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> jälitustoimingud",
+   "kood": "206109700"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> jälitustoimingud -> jälitustoimingu tegemise üldtingimused",
+   "kood": "206112111"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> jälitustoimingud -> jälitustoiminguga kogutud andmete tutvustamine",
+   "kood": "206112606"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> jälitustoimingud -> jälitustoiminguga kogutud andmete tutvustamine -> jälitustoiminguga kogutud andmete säilitamine ja hävitamine",
+   "kood": "421924424"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> jälitustoimingud -> kaebuse esitamine seoses jälitustoiminguga",
+   "kood": "206112641"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> jälitustoimingud -> jälitustoimingu lubatavus",
+   "kood": "206109704"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> jälitustoimingud -> jälitustoiminguks loa andmine",
+   "kood": "206109705"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> jälitustoimingud -> jälitustoiminguga saadud tõendi lubatavus",
+   "kood": "206109706"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> jälitustoimingud -> jälitustoimingust teavitamine",
+   "kood": "206109701"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> jälitustoimingud -> jälitustoimingu protokoll",
+   "kood": "206109969"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalmenetlus -> apellatsioonimenetlus -> kohtulik arutamine ringkonnakohtus  -> kriminaalmenetlusõiguse oluline rikkumine -> nõupidamissaladuse rikkumine",
+   "kood": "206109937"
+  },
+  {
+   "path": "Karistusõigus -> materiaalõigus -> ERIOSA -> riigivastased süüteod -> süüteod riigivõimu vastu -> riigisaladus ja salastatud välisteave",
+   "kood": "206109531"
+  },
+  {
+   "path": "Karistusõigus -> materiaalõigus -> ERIOSA -> varavastased süüteod -> kahjustamine -> arvutiandmetesse sekkumine",
+   "kood": "206112658"
+  },
+  {
+   "path": "Karistusõigus -> materiaalõigus -> ERIOSA -> majandusalased süüteod -> äriühingutega seotud süüteod -> ärisaladuse hoidmine",
+   "kood": "206109449"
+  },
+  {
+   "path": "Karistusõigus -> materiaalõigus -> ERIOSA -> süüteod perekonna ja alaealise vastu -> süüteod alaealise vastu -> lapspornole juurdepääsu taotlemine ja selle jälgimine",
+   "kood": "445982878"
+  },
+  {
+   "path": "Karistusõigus -> materiaalõigus -> ERIOSA -> õigusemõistmisvastased süüteod -> isiku õigused kohtueelses, kohtuvälises ja kohtumenetluses -> ebaseaduslik jälitustoiming",
+   "kood": "206112554"
+  },
+  {
+   "path": "Karistusõigus -> materiaalõigus -> ERIOSA -> õigusemõistmisvastased süüteod -> isiku õigused kohtueelses, kohtuvälises ja kohtumenetluses -> andmete ebaseaduslik avaldamine",
+   "kood": "206111593"
+  },
+  {
+   "path": "Karistusõigus -> materiaalõigus -> ERIOSA -> isikuvastased süüteod -> vabadusvastased süüteod -> eraviisiline jälitustegevus",
+   "kood": "206109503"
+  },
+  {
+   "path": "Karistusõigus -> materiaalõigus -> ERIOSA -> avaliku rahu vastased süüteod -> avalik võimu teostamise vastased süüteod     -> andmetega seotud süüteod",
+   "kood": "206109620"
+  },
+  {
+   "path": "Karistusõigus -> materiaalõigus -> ERIOSA -> poliitiliste ja kodanikuõiguste vastased süüteod -> põhivabaduste rikkumine -> delikaatsete isikuandmete avaldamine",
+   "kood": "206112611"
+  },
+  {
+   "path": "Karistusõigus -> materiaalõigus -> ERIOSA -> poliitiliste ja kodanikuõiguste vastased süüteod -> põhivabaduste rikkumine -> kutse- ja ametitegevuses teatavaks saanud saladus",
+   "kood": "206109606"
+  },
+  {
+   "path": "Karistusõigus -> materiaalõigus -> ERIOSA -> poliitiliste ja kodanikuõiguste vastased süüteod -> põhivabaduste rikkumine -> sõnumisaladuse rikkumine",
+   "kood": "206109607"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalõigus (kriminaalasjad kuni 01.09.2002) -> Ebaõigete andmete esitamise",
+   "kood": "206106701"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalõigus (kriminaalasjad kuni 01.09.2002) -> Jälitustegevus",
+   "kood": "206106727"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalõigus (kriminaalasjad kuni 01.09.2002) -> Jälitustegevus -> salajasele koostööle kaasamise mõiste (Jälitustegevuse seaduse § 14)",
+   "kood": "206107857"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalõigus (kriminaalasjad kuni 01.09.2002) -> Jälitustegevus -> ebaseaduslik jälitustegevus",
+   "kood": "206107038"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalõigus (kriminaalasjad kuni 01.09.2002) -> Jälitustegevus -> isiku kaasamine salajasele koostööle jälitustegevuses",
+   "kood": "206107166"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalõigus (kriminaalasjad kuni 01.09.2002) -> Raamatupidamine -> raamatupidamisandmete moonutamise, varjamise ja hävitamise subjekt",
+   "kood": "206107810"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalõigus (kriminaalasjad kuni 01.09.2002) -> Valeandmete esitamine",
+   "kood": "206106911"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalõigus (kriminaalasjad kuni 01.09.2002) -> Tõendamine -> jälitustegevusega saadud teabesalvestuse kasutamine",
+   "kood": "206107183"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalõigus (kriminaalasjad kuni 01.09.2002) -> Tõendid -> eksperdi ülekuulamisel saadud andmete tõendina kasutamise lubamatus",
+   "kood": "206107074"
+  },
+  {
+   "path": "Karistusõigus -> kriminaalõigus (kriminaalasjad kuni 01.09.2002) -> Tõendid -> jälituse erandtoimingute tulemusena saadud andmete kasutamine tõenditena",
+   "kood": "206107182"
+  },
+  {
+   "path": "Karistusõigus -> väärteomenetlus -> menetlustoimingud, -tähtajad ja -kulud -> jälitustoimingutega tõendite kogumise keeld",
+   "kood": "206112731"
+  }
+ ],
+ "notes": "Derived from the consolidated acts via /akt/{id}/blob-html and the decision classification tree via /kohtuteave/kohtulahendid/liigitused. Paragraph counts are full-text hits measured 2026-09-16. Union all three channels, dedupe on objektId."
+}

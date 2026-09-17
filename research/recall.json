@@ -1,0 +1,841 @@
+[
+ {
+  "nr": "2-24-137369/21",
+  "kohus": "Harju Maakohus Tallinna kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-23-6730/65",
+  "kohus": "Tallinna Ringkonnakohtu tsiviilkolleegium",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Ebaõige teabe eemaldamine",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "3-25-1216/7",
+  "kohus": "Tartu Ringkonnakohtu halduskolleegium",
+  "kat": [
+   "Planeerimine ja ehitus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-21-9444/44",
+  "kohus": "Tallinna Ringkonnakohtu tsiviilkolleegium",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed puuduvad.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-22-18822/53",
+  "kohus": "Tallinna Ringkonnakohtu tsiviilkolleegium",
+  "kat": [
+   "Perekonnaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-24-139711/12",
+  "kohus": "Tartu Maakohus Tartu kohtumaja",
+  "kat": [
+   "Perekonnaõigus"
+  ],
+  "label": "JAH",
+  "conf": 0.9,
+  "why": "Andmete avalikustamine piirati.",
+  "lexical": true,
+  "hits": [
+   "andmesubjekt"
+  ]
+ },
+ {
+  "nr": "2-24-138041/6",
+  "kohus": "Harju Maakohus Tallinna kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-24-5323/31",
+  "kohus": "Tartu Ringkonnakohtu kriminaalkolleegium",
+  "kat": [
+   "Isikuvastased süüteod",
+   "Avaliku rahu vastased süüteod",
+   "Poliitiliste ja kodanikuõiguste vastased süüteod"
+  ],
+  "label": "JAH",
+  "conf": 0.9,
+  "why": "Eraelu puutumatuse kaitsega seotud küsimused.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-23-146564/15",
+  "kohus": "Harju Maakohus Tallinna kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-25-553/3",
+  "kohus": "Pärnu Maakohus Pärnu kohtumaja Rüütli tänaval",
+  "kat": [
+   "Perekonnaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-22-127422/5",
+  "kohus": "Pärnu Maakohus Paide kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "3-22-1514/22",
+  "kohus": "Tallinna Halduskohus Tallinna kohtumaja",
+  "kat": [
+   "Andmekogud ja avalik teave"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Menetluskulude vaidlus",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-21-11019/11",
+  "kohus": "Harju Maakohus Tallinna kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "3-22-2141/7",
+  "kohus": "Tartu Halduskohus Tartu kohtumaja",
+  "kat": [
+   "Korrakaitse"
+  ],
+  "label": "JAH",
+  "conf": 0.8,
+  "why": "Avaldamise õiguslik hindamine.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-22-5030/7",
+  "kohus": "Viru Maakohus Narva kohtumaja",
+  "kat": [
+   "Pankrotiõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-22-100679/12",
+  "kohus": "Harju Maakohus Tallinna kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "3-22-105/38",
+  "kohus": "Tallinna Halduskohus Tallinna kohtumaja",
+  "kat": [
+   "Rahvastik"
+  ],
+  "label": "JAH",
+  "conf": 0.9,
+  "why": "Andmete avaldamine piiratud.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "3-21-1703/15",
+  "kohus": "Tallinna Halduskohus Tallinna kohtumaja",
+  "kat": [
+   "Planeerimine ja ehitus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "3-21-956/13",
+  "kohus": "Tallinna Halduskohus Tallinna kohtumaja",
+  "kat": [
+   "Korrakaitse"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-21-19277/17",
+  "kohus": "Harju Maakohus Tallinna kohtumaja",
+  "kat": [
+   "Pankrotiõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-18-11444/100",
+  "kohus": "Tallinna Ringkonnakohtu tsiviilkolleegium",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-19-3254/72",
+  "kohus": "Tartu Ringkonnakohtu kriminaalkolleegium",
+  "kat": [
+   "Õigusemõistmisevastased süüteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-18-10378/85",
+  "kohus": "Tartu Maakohus Jõgeva kohtumaja",
+  "kat": [
+   "Isikuvastased süüteod",
+   "Süüteod perekonna ja alaealise vastu"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-21-7689/6",
+  "kohus": "Tallinna Ringkonnakohtu kriminaalkolleegium",
+  "kat": [],
+  "label": "JAH",
+  "conf": 0.8,
+  "why": "Andmesubjekti õigused",
+  "lexical": true,
+  "hits": [
+   "andmesubjekt",
+   "isikuandme"
+  ]
+ },
+ {
+  "nr": "1-20-6530/26",
+  "kohus": "Tartu Ringkonnakohtu kriminaalkolleegium",
+  "kat": [
+   "Isikuvastased süüteod",
+   "Varavastased süüteod"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-19-19808/15",
+  "kohus": "Viru Maakohus Rakvere kohtumaja",
+  "kat": [
+   "Perekonnaõigus"
+  ],
+  "label": "JAH",
+  "conf": 0.9,
+  "why": "Isikuandmete kaitse.",
+  "lexical": true,
+  "hits": [
+   "andmesubjekt",
+   "eraelu puutumatus",
+   "isikuandme"
+  ]
+ },
+ {
+  "nr": "3-20-2129/10",
+  "kohus": "Tartu Ringkonnakohtu halduskolleegium",
+  "kat": [
+   "Rahvastik"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-10-15486/66",
+  "kohus": "Harju Maakohus Tallinna kohtumaja",
+  "kat": [
+   "Pankrotiõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-20-8091/7",
+  "kohus": "Harju Maakohus Tallinna kohtumaja",
+  "kat": [
+   "Liiklussüüteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-20-8004/8",
+  "kohus": "Pärnu Maakohus Paide kohtumaja",
+  "kat": [
+   "Liiklussüüteod"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Kohtulahend ei käsitle isikuandmeid.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "3-17-1473/16",
+  "kohus": "Tallinna Ringkonnakohtu halduskolleegium",
+  "kat": [
+   "Sotsiaalõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-17-7724/6",
+  "kohus": "Harju Maakohus Liivalaia kohtumaja",
+  "kat": [
+   "Varavastased süüteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-16-10790/13",
+  "kohus": "Viru Maakohus Narva kohtumaja",
+  "kat": [
+   "Pankrotiõigus",
+   "Pankrotiõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-16-10999/18",
+  "kohus": "Viru Maakohus Narva kohtumaja",
+  "kat": [
+   "Pankrotiõigus",
+   "Pankrotiõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-17-11627/7",
+  "kohus": "Harju Maakohus Kentmanni kohtumaja",
+  "kat": [
+   "Pankrotiõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-16-9094/14",
+  "kohus": "Tallinna Ringkonnakohtu kriminaalkolleegium",
+  "kat": [
+   "Liiklussüüteod"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Lahend ei käsitle privaatsust.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-16-14118/30",
+  "kohus": "Tallinna Ringkonnakohtu tsiviilkolleegium",
+  "kat": [
+   "Täitmine"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "3-17-21/2",
+  "kohus": "Tallinna Halduskohus Tallinna kohtumaja",
+  "kat": [
+   "Maksuõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "4-16-2279/12",
+  "kohus": "Tartu Maakohus Tartu kohtumaja",
+  "kat": [
+   "Liiklusväärteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-17-101/2",
+  "kohus": "Tartu Maakohus Tartu kohtumaja",
+  "kat": [
+   "Varavastased süüteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "4-15-8798/8",
+  "kohus": "Harju Maakohus Liivalaia kohtumaja",
+  "kat": [
+   "Rahvatervisevastased väärteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "4-15-9410/9",
+  "kohus": "Harju Maakohus Liivalaia kohtumaja",
+  "kat": [
+   "Rahvatervisevastased väärteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "4-15-8958/9",
+  "kohus": "Harju Maakohus Liivalaia kohtumaja",
+  "kat": [
+   "Rahvatervisevastased väärteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-15-8871/4",
+  "kohus": "Tartu Maakohus Võru kohtumaja Võrus",
+  "kat": [],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal.",
+  "lexical": true,
+  "hits": [
+   "iküm"
+  ]
+ },
+ {
+  "nr": "4-15-8061/3",
+  "kohus": "Tartu Maakohus Tartu kohtumaja",
+  "kat": [
+   "Liiklusväärteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-11-5994/5",
+  "kohus": "Harju Maakohus Liivalaia kohtumaja",
+  "kat": [],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "4-10-2989/13",
+  "kohus": "Harju Maakohus Liivalaia kohtumaja",
+  "kat": [
+   "Liiklusväärteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "4-10-2503/20",
+  "kohus": "Viru Maakohus Jõhvi kohtumaja",
+  "kat": [
+   "Muud väärteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-11-3226/7",
+  "kohus": "Viru Maakohus Narva kohtumaja",
+  "kat": [],
+  "label": "JAH",
+  "conf": 0.8,
+  "why": "Andmetöötluse õiguslik hindamine",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-11-5965/2",
+  "kohus": "Tartu Maakohus Võru kohtumaja Võrus",
+  "kat": [],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Taustal, mitte vaidlustatud.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "4-08-6916\\3",
+  "kohus": "Tartu Maakohus Viljandi kohtumaja",
+  "kat": [
+   "Liiklusväärteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-08-10733\\3",
+  "kohus": "Harju Maakohus Liivalaia kohtumaja",
+  "kat": [],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-08-14324\\2",
+  "kohus": "Tartu Maakohus Jõgeva kohtumaja",
+  "kat": [],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "4-08-9862\\3",
+  "kohus": "Tartu Maakohus Võru kohtumaja Põlvas",
+  "kat": [
+   "Muud väärteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Tekst liiga segane.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "4-08-10632\\1",
+  "kohus": "Harju Maakohus Liivalaia kohtumaja",
+  "kat": [
+   "Muud väärteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-07-1056/11",
+  "kohus": "Viru Maakohus Jõhvi kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": true,
+  "hits": [
+   "iküm"
+  ]
+ },
+ {
+  "nr": "2-07-1497/3",
+  "kohus": "Harju Maakohus Kentmanni kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-06-38262/4",
+  "kohus": "Harju Maakohus Kentmanni kohtumaja",
+  "kat": [],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-06-38671/9",
+  "kohus": "Viru Maakohus Narva kohtumaja",
+  "kat": [
+   "Perekonnaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-07-32288/2",
+  "kohus": "Harju Maakohus Kentmanni kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "4-06-3844\\5",
+  "kohus": "Pärnu Maakohus Rapla kohtumaja",
+  "kat": [
+   "Muud väärteod"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-06-13513\\4",
+  "kohus": "Harju Maakohus Tartu mnt kohtumaja",
+  "kat": [],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Kriminaalasja, mitte andmekaitse.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "1-06-14437\\2",
+  "kohus": "Tartu Maakohus Tartu kohtumaja",
+  "kat": [],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": true,
+  "hits": [
+   "iküm"
+  ]
+ },
+ {
+  "nr": "1-06-14866\\3",
+  "kohus": "Tartu Maakohus Tartu kohtumaja",
+  "kat": [],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Kohtulahend puudutab vargusi.",
+  "lexical": true,
+  "hits": [
+   "iküm"
+  ]
+ },
+ {
+  "nr": "1-06-13373\\2",
+  "kohus": "Tartu Maakohus Tartu kohtumaja",
+  "kat": [],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-05-1683/6",
+  "kohus": "Tartu Ringkonnakohtu tsiviilkolleegium",
+  "kat": [],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Lahendis puudub isikuandmete kaitse kusimus.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-04-1053/2",
+  "kohus": "Viru Maakohus Rakvere kohtumaja",
+  "kat": [
+   "Asjaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-05-22078/2",
+  "kohus": "Tartu Maakohus Tartu kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal.",
+  "lexical": false,
+  "hits": []
+ },
+ {
+  "nr": "2-06-129/6",
+  "kohus": "Harju Maakohus Kentmanni kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.95,
+  "why": "Isikuandmed taustal.",
+  "lexical": true,
+  "hits": [
+   "iküm"
+  ]
+ },
+ {
+  "nr": "2-05-16279/1",
+  "kohus": "Harju Maakohus Kentmanni kohtumaja",
+  "kat": [
+   "Võlaõigus"
+  ],
+  "label": "EI",
+  "conf": 0.9,
+  "why": "Isikuandmed taustal",
+  "lexical": false,
+  "hits": []
+ }
+]

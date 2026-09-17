@@ -1,0 +1,122 @@
+[
+ {
+  "q": "Miks ettevõte salvestas minu telefonikõne ja kas nad peavad selle kustutama, kui ma ei andnud selleks loa?",
+  "doc": 0,
+  "gold_chunk": 9
+ },
+ {
+  "q": "Miks ettevõte ei anna mulle selgitust, kuidas nad mu e-posti aadressi said ja milliseid kokkuleppeid neil on andmete töötlemiseks teiste ettevõtetega?",
+  "doc": 1,
+  "gold_chunk": 22
+ },
+ {
+  "q": "Kui ma laenu võtsin ja laenufirma ütles, et pean nõustuma oma isikuandmete jagamisega, et laenu saada, kas see on õige ja kas ma saan hiljem oma nõusoleku tagasi võtta, kui ma ei taha enam, et neid andmeid jagatakse?",
+  "doc": 2,
+  "gold_chunk": 43
+ },
+ {
+  "q": "Miks ettevõte, kus on kaamerad, ei teavita inimesi nõuetekohaselt, kes neid vaatab, miks ja kuidas nendega ühendust võtta, ja kas see on korras, et nad ütlevad erinevaid asju erinevates kohtades?",
+  "doc": 3,
+  "gold_chunk": 58
+ },
+ {
+  "q": "Miks ma ei saanud teada, et minu võlg on kantud avalikus registrisse, kui mul on kindel, et neil on minu kontaktandmed?",
+  "doc": 4,
+  "gold_chunk": 87
+ },
+ {
+  "q": "Kui ma paigaldan oma maja välisseinale kaamera, et jälgida, kas keegi ei tee minu vara lähedal midagi kahtlast, kas see on seaduslik ja kas mu naabritel on õigus selle kaamera kasutamise lõpetamist nõuda?",
+  "doc": 5,
+  "gold_chunk": 101
+ },
+ {
+  "q": "Miks pannakse väikesed võlad, nagu parkimis trahvid või väikesed arved, maksehäireregistrisse ja kas see on õiglane viis inimesi sundima oma võlad tasuma?",
+  "doc": 6,
+  "gold_chunk": 127
+ },
+ {
+  "q": "Kui ma tahan jagada oma sõbra isikuandmeid ettevõttega, mis asub väljaspool Euroopa Liitu, mida ma pean arvestama, et see oleks seaduslik ja mu sõbra andmed oleksid kaitstud?",
+  "doc": 7,
+  "gold_chunk": 175
+ },
+ {
+  "q": "Miks ettevõte peab kustutama teatud inimeste kohta kogutud info, mida nad enam seaduslikult töödelda ei saa, ja kuidas nad peavad tõestama, et see info on tõesti kustutatud?",
+  "doc": 8,
+  "gold_chunk": 197
+ },
+ {
+  "q": "Miks mu terviseandmeid ei anta mulle piisavalt kiiresti ja täielikult, kuigi olen neid juba ammu taotlenud?",
+  "doc": 9,
+  "gold_chunk": 213
+ },
+ {
+  "q": "Kuidas saab ettevõte seaduslikult piirata kliendi ligipääsu oma isikuandmetele, kui ta küsib neid andmeid?",
+  "doc": 10,
+  "gold_chunk": 228
+ },
+ {
+  "q": "Miks ettevõte, mis müüb hambaparandeid, peab hoidma minu hambakliiniku külastamise andmeid isegi pärast lepingu lõppemist ja kuidas see mõjutab minu privaatsust?",
+  "doc": 11,
+  "gold_chunk": 255
+ },
+ {
+  "q": "Miks ma pean iga kord tööpraktika teenust taotledes uuesti nõustuma oma eriliiki isikuandmete töötlemisega ja kas see on õiglane?",
+  "doc": 18,
+  "gold_chunk": 326
+ },
+ {
+  "q": "Miks ei saa ema ja laste täpset aadressi teada, kui vanemad on lahku läinud ja lapsed ei soovi isaga kontakti?",
+  "doc": 19,
+  "gold_chunk": 352
+ },
+ {
+  "q": "Miks ei saa ma teada, millal ametiasutus heaks kiitis lennujaama turvakontrolli teostavate inimeste koolituskava ja testi ning millal nad need inimesed sertifitseerisid?",
+  "doc": 20,
+  "gold_chunk": 368
+ },
+ {
+  "q": "Miks ma ei saa ligipääsu teabele, mis räägib sellest, kes said põllumajandustoetusi aastaid tagasi, kui EL-i reeglid seda ei keela ja kui need andmed on juba ammu vanemad kui kaks aastat?",
+  "doc": 21,
+  "gold_chunk": 387
+ },
+ {
+  "q": "Miks ma ei saa oma kohalikult omavalitsuselt täpset vastust, kui küsin infot, mida nad peaksid teadma, ja kuidas peaksin oma päringut õigesti esitama, et saada õigeaegset ja täpset teavet?",
+  "doc": 22,
+  "gold_chunk": 411
+ },
+ {
+  "q": "Miks ei saa ma täielikku teavet avalduse kohta, mida olen küsinud, ja kuidas peaks asutus oma keeldumist põhjendama, kui ma ei nõustu osaliselt teabe eest hoidmisega?",
+  "doc": 23,
+  "gold_chunk": 424
+ },
+ {
+  "q": "Miks ei saa ma oma tööandjalt saadud dokumendi kohta selgust, kas ma võin seda kedagi näidata, ja miks on nende vastused sellele küsimusele nii segased?",
+  "doc": 24,
+  "gold_chunk": 444
+ },
+ {
+  "q": "Miks ei saa advokaat ligipääsu teatud tüüpi teabele, mida ta vajab oma kliendi juhtumi lahendamiseks, ja kas on võimalik saada vähemalt osa teabest, mis ei ole piiratud?",
+  "doc": 25,
+  "gold_chunk": 462
+ },
+ {
+  "q": "Miks ma ei saa täpsemat infot selle kohta, kui palju raha üks inimene peab teisele inimesele maksma, kui see asi on juba kohtus läbi käsitletud ja otsus on tehtud?",
+  "doc": 26,
+  "gold_chunk": 477
+ },
+ {
+  "q": "Miks ei saa ma teada, kui palju ettevõte, kes toob mulle koju vesi ja viib reovee, maksab oma raamatupidajatöö eest, kui see võib mõjutada seda, mida ma oma arve eest maksan?",
+  "doc": 27,
+  "gold_chunk": 492
+ },
+ {
+  "q": "Miks ma ei saanud vastust oma päringule, kui minu maja lähedal on halvas seisukorras tee, ja kes peaks selle eest vastutama?",
+  "doc": 28,
+  "gold_chunk": 503
+ },
+ {
+  "q": "Miks ei saanud ma vastust oma päringule ja mida peaksin nüüd tegema, kui asutus väidab, et mu päringut ei ole kunagi saadetud?",
+  "doc": 29,
+  "gold_chunk": 515
+ }
+]

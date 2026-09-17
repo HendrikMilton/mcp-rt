@@ -1,0 +1,122 @@
+[
+ {
+  "q": "Millised on õiguslikud alused, mis võimaldavad vastutaval töötlejal isikuandmete kaitse üldmääruse kohaselt jätkata isikuandmete töötlemist õigusnõuete koostamiseks, esitamiseks ja kaitsmiseks, ning kuidas peab andmetöötleja tõendama andmetöötluse seaduslikkust?",
+  "doc": 0,
+  "gold_chunk": 9
+ },
+ {
+  "q": "Millised on Andmekaitse Inspektsiooni õigused ja kohustused järelevalvemenetluse käigus, kui andmetöötlus on läbipaistmatu ja andmesubjektile ei ole jagatud selgitusi?",
+  "doc": 1,
+  "gold_chunk": 22
+ },
+ {
+  "q": "Kas nõusolek, mis on antud isikuandmete töötlemiseks lepingu sõlmimise kontekstis, kus andmesubjekt on selgelt ebavõrdses olukorras ja nõusoleku andmine on pandud lepingu täitmise tingimuseks, loetakse vabatahtlikuks ja seega õiguslikuks aluseks andmetöötlusele vastavalt isikuandmete kaitse üldmäärusele (IKÜM)?",
+  "doc": 2,
+  "gold_chunk": 43
+ },
+ {
+  "q": "Millised on Andmekaitse Inspektsiooni nõuded videovalve teavitussiltidele ja millised õiguslikud alused peavad olema nende siltide järgi selgelt määratletud?",
+  "doc": 3,
+  "gold_chunk": 58
+ },
+ {
+  "q": "Kas andmetöötleja on kohustatud teavitama isikut andmete töötlemisest, kui tal on isiku kontaktandmed olemas, ja millised on erandid sellest kohustusest?",
+  "doc": 4,
+  "gold_chunk": 87
+ },
+ {
+  "q": "Millised on õiguslikud alused ja tingimused, mille alusel on lubatud avalikku ruumi filmida isikuandmete töötlemise seisukohast, ning kuidas see mõjutab naaberkinnistute privaatsust?",
+  "doc": 5,
+  "gold_chunk": 101
+ },
+ {
+  "q": "Kas maksehäireregistri kasutamine väikeste võlgade sissenõudmiseks on kooskõlas isikuandmete kaitse seaduse eesmärkidega?",
+  "doc": 6,
+  "gold_chunk": 127
+ },
+ {
+  "q": "Millised on õiguslikud alused ja nõuded isikuandmete edastamiseks kolmandasse riiki, eriti kui see riik ei taga piisavat andmekaitsetasemet, ning millised erandjuhtumid lubavad andmete edastamist ilma täiendavate kaitsemeetmeteta?",
+  "doc": 7,
+  "gold_chunk": 175
+ },
+ {
+  "q": "Millised on Andmekaitse Inspektsiooni õigused ja kohustused isikuandmete kustutamise korralduste andmisel ning millised tõendid peab ettevõte esitama kustutamise täitmise tõendamiseks?",
+  "doc": 8,
+  "gold_chunk": 197
+ },
+ {
+  "q": "Millised on andmesubjekti õigused andmete väljastamisel ja kuidas käitub andmekaitse inspektsioon, kui andmetöötleja ei reageeri nõuetekohaselt nende õiguste täitmisele?",
+  "doc": 9,
+  "gold_chunk": 213
+ },
+ {
+  "q": "Kuidas saab andmesubjekti õigust tutvuda oma isikuandmetega piirata vastavalt IKÜM-ile ja millised on sellised piirangud seadusega kooskõlas?",
+  "doc": 10,
+  "gold_chunk": 228
+ },
+ {
+  "q": "Kuidas määratakse andmetöötleja ja vastutava töötleja suhe andmetöötluse käigus, kui vastutav töötleja ei ole selgelt määratletud?",
+  "doc": 11,
+  "gold_chunk": 255
+ },
+ {
+  "q": "Millised on andmekaitse üldpõhimõtted ja kuidas neid tuleb järgida eriliiki isikuandmete töötlemisel, eriti kui tekib vajadus nõusolekut tagasi võtta või uuesti anda?",
+  "doc": 18,
+  "gold_chunk": 326
+ },
+ {
+  "q": "Kuidas käsitletakse andmesubjekti eraelu puutumatuse kaitsmist juhul, kui lapsed ei soovi suhelda ühe vanemaga ja neil on stabiilne elukeskkond teise vanemaga?",
+  "doc": 19,
+  "gold_chunk": 352
+ },
+ {
+  "q": "Kas Andmekaitse Inspektsioon võib järelepärida ametiasutuse tegevust teabenõudele vastamisel, kui teabenõue käsitleb ametiasutuse heakskiidetud koolituskavade ja sertifikaatide dokumente?",
+  "doc": 20,
+  "gold_chunk": 368
+ },
+ {
+  "q": "Kas EL-i määruse (EL) nr 1306/2013 artikli 111 kohaselt on pärast kahe aasta möödumist toetusesaajate andmete avaldamine lubatud ja kuidas see mõjutab Eesti avaliku teabe seaduse kohaldamist?",
+  "doc": 21,
+  "gold_chunk": 387
+ },
+ {
+  "q": "Kuidas peab avaliku teabe seaduse alusel asutus käsitlema saabunud teabenõudeid ja millised on nende täitmise tähtajad?",
+  "doc": 22,
+  "gold_chunk": 411
+ },
+ {
+  "q": "Millised on andmekaitse inspektsiooni nõuded avalduse sisu täieliku kättesaadavaks tegemise keeldumise põhjendamisel?",
+  "doc": 23,
+  "gold_chunk": 424
+ },
+ {
+  "q": "Kuidas peab teabevaldaja käituma, kui talle esitatakse taotlus teabe kohta, millele ei ole kehtestatud juurdepääsupiirangut, kuid teabevaldaja soovib siiski piirata teabe levitamist?",
+  "doc": 24,
+  "gold_chunk": 444
+ },
+ {
+  "q": "Kas advokaadil on õigus nõuda juurdepääsu piiranguga teabele õigusteenuse osutamiseks, võttes arvesse nii advokatuuri seadust kui ka avaliku teabe seadust?",
+  "doc": 25,
+  "gold_chunk": 462
+ },
+ {
+  "q": "Kuidas käitub Andmekaitse Inspektsioon juhul, kui haldusasja kohtumäärus on avalik ja teabenõudja ei ole esitanud täiendavaid pretensioone pärast vastuse saamist?",
+  "doc": 26,
+  "gold_chunk": 477
+ },
+ {
+  "q": "Kas eraõiguslik juriidiline isik, kes osutab klassikalist avalikku teenust, on teabevaldaja avalike ülesannete täitmisega seotud teabe suhtes ja kas raamatupidamisteenuse tasu kuulub avaliku teenuse hinna kujunemist puudutava teabe alla?",
+  "doc": 27,
+  "gold_chunk": 492
+ },
+ {
+  "q": "Millised on kohaliku omavalitsuse õiguslikud kohustused ja vastutus kinnistute ja erateede seisukorra eest, kui need ei kuulu otseselt linna maa-alade hulka?",
+  "doc": 28,
+  "gold_chunk": 503
+ },
+ {
+  "q": "Kas Andmekaitse Inspektsioon saab teha ettekirjutuse teabevaldajale teabe väljastamiseks, kui teabevaldaja väidab, et teabenõue ei jõudnud nendeni?",
+  "doc": 29,
+  "gold_chunk": 515
+ }
+]
