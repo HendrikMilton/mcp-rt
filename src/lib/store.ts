@@ -11,7 +11,12 @@
  * pass, not a re-crawl. Every access pattern at query time is a full scan of a ~3MB metadata blob,
  * so a file beats a table and there is no DynamoDB here.
  */
-import {GetObjectCommand, PutObjectCommand, S3Client} from '@aws-sdk/client-s3';
+import {
+	GetObjectCommand,
+	HeadObjectCommand,
+	PutObjectCommand,
+	S3Client,
+} from '@aws-sdk/client-s3';
 import {gunzipSync, gzipSync} from 'zlib';
 import {EMBED_DIM} from './bedrock';
 import type {Chunk, Doc, Verdict} from '../types';
@@ -24,6 +29,19 @@ const s3 = new S3Client({region: REGION});
 
 export const put = (key: string, body: Buffer | string, contentType: string) =>
 	s3.send(new PutObjectCommand({Bucket: BUCKET, Key: key, Body: body, ContentType: contentType}));
+
+/** Cheap existence check, so a rerun does not re-upload what is already stored. */
+export const exists = async (key: string): Promise<boolean> => {
+	try {
+		await s3.send(new HeadObjectCommand({Bucket: BUCKET, Key: key}));
+		return true;
+	} catch {
+		return false;
+	}
+};
+
+export const textKey = (id: string): string => `${PREFIX}/text/${id}.txt`;
+export const pdfKey = (id: string): string => `${PREFIX}/raw/${id}.pdf`;
 
 export const getBytes = async (key: string): Promise<Buffer> => {
 	const res = await s3.send(new GetObjectCommand({Bucket: BUCKET, Key: key}));

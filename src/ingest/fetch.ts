@@ -15,7 +15,7 @@ import {DATA} from '../lib/paths';
 import pdfParse from 'pdf-parse';
 import {mapPool} from '../lib/pool';
 import {fetchPdf} from '../lib/rt';
-import {getText, putPdf, putText} from '../lib/store';
+import {exists, getText, pdfKey, putPdf, putText, textKey} from '../lib/store';
 import type {Candidate} from '../types';
 
 const DOWNLOAD_CONCURRENCY = Number(process.env.DOWNLOAD_CONCURRENCY ?? 25);
@@ -108,17 +108,32 @@ export const fetchAll = async (candidates: Candidate[]): Promise<FetchStats> => 
 	return stats;
 };
 
-/** Push already-downloaded artifacts to S3. Used once the bucket exists, after a SKIP_UPLOAD run. */
+/**
+ * Push already-downloaded artifacts to S3. Used once the bucket exists, after a SKIP_UPLOAD run,
+ * and again after each classification batch to publish the new survivors' text.
+ *
+ * A decision published by a court never changes, so anything already in the bucket is skipped on
+ * sight — without that, every batch re-uploaded the whole corpus and the upload came to dominate
+ * the run.
+ */
 export const uploadAll = async (candidates: Candidate[]): Promise<number> => {
 	const have = candidates.filter((c) => existsSync(textPath(c.id)));
 	let n = 0;
+	let skipped = 0;
 	await mapPool(have, DOWNLOAD_CONCURRENCY, async (c) => {
-		const text = readFileSync(textPath(c.id), 'utf8');
-		await putText(c.id, text);
-		if (existsSync(pdfPath(c.id))) await putPdf(c.id, readFileSync(pdfPath(c.id)));
+		// Checked independently: the text is what get_court_decision serves and is written first,
+		// so a run interrupted between the two would otherwise leave the PDF permanently unarchived.
+		const [hasText, hasPdf] = await Promise.all([exists(textKey(c.id)), exists(pdfKey(c.id))]);
+		if (hasText && hasPdf) {
+			skipped += 1;
+			return;
+		}
+		if (!hasText) await putText(c.id, readFileSync(textPath(c.id), 'utf8'));
+		if (!hasPdf && existsSync(pdfPath(c.id))) await putPdf(c.id, readFileSync(pdfPath(c.id)));
 		n += 1;
-		if (n % 2000 === 0) console.log(`  uploaded ${n}/${have.length}`);
+		if (n % 500 === 0) console.log(`  uploaded ${n} (${skipped} already stored)`);
 	});
+	console.log(`uploaded ${n}, skipped ${skipped} already in S3`);
 	return n;
 };
 
