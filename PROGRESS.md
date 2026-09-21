@@ -1,141 +1,138 @@
-# mcp-rt progress
+# mcp-rt — current state and how to continue
 
-Update this as steps land. Read `HANDOFF.md` first — it has every measured number and the
-gotchas already paid for. Probe artifacts are in `research/`; don't re-measure what's there.
+Read this first. `HANDOFF.md` is the original design brief and is still accurate about *why* things
+are built the way they are; this file is what is true *now*. Probe artifacts are in `research/`.
 
-**Status:** paused mid-classification, resumable. Everything up to and including the download stage
-is finished; 4,876 of 21,926 candidates are classified. **Resume with `yarn ingest`** — it rehydrates
-verdicts, skips every finished row, and runs through embedding and index write without re-crawling
-or re-downloading anything.
+**Status:** live and serving, corpus 41% classified. Nothing is running. Every stage resumes from
+disk — there is no work to redo, only work to continue.
 
-**Blocker to clear first: Bedrock's per-day token quota, not money.** See the log below.
+---
 
-## Build
+## What is deployed
 
-- [x] Scaffold `mcp-rt/` (copy `mcp-aki` tsconfig, package.json, build-lambda.sh; zod must match the SDK's 4.x)
-- [x] `src/ingest/crawl.ts` — RT API client, `searchAfter` pagination, three seed channels, dedupe
-- [x] Measured search-endpoint parallelism — **it parallelises**: 63 req/s at concurrency 20, p50 153ms, zero 429s over 240 sustained requests. HANDOFF's "~8s/request serially" was stale; single requests are 0.6–1.8s. Crawler runs at concurrency 16. Pool build took ~4 min, not 2.2h.
-- [x] `src/ingest/fetch.ts` — concurrent download (conc ~25, 429 backoff), pdf-parse
-- [x] `src/ingest/classify.ts` — Haiku, escalate <0.9 to Sonnet, JSONL append + resume
-- [x] `src/ingest/build.ts` — orchestrate, write second index to S3
-- [x] Two-index support in `store.ts` — `Corpus<D>` descriptor, one cache entry per corpus, so a container answering only AKI questions never downloads the court index
-- [x] 3 MCP tools: `search_court_decisions`, `get_court_decision`, `list_court_decisions`
-- [x] Terraform: `terraform/rt-mcp.tf` — `hycapital-rt-rag` bucket, `rt-mcp-ingest` Lambda, monthly EventBridge (2nd of the month, a day after AKI so the two never contend for Bedrock tokens), read grant to the existing MCP role, $200 Bedrock budget backstop. Applied: 13 added, 0 changed.
-- [ ] Deploy + verify against real queries
+One MCP endpoint, two corpora, seven tools. Connector URL:
+`cd terraform && terraform output -raw aki_mcp_url` (registered in `~/.claude.json` user scope as
+`aki`; the same URL is added in Claude Desktop).
 
-## Limits (must be constants in code — see HANDOFF.md)
+| tool | corpus |
+|---|---|
+| `search_decisions`, `get_decision`, `list_decisions` | AKI, 657 decisions / 12,113 chunks |
+| `search_court_decisions`, `get_court_decision`, `list_court_decisions` | courts, **1,136 decisions / 25,404 chunks, 2022–2026** |
+| `get_statute` | Riigi Teataja consolidated legislation, live (not indexed) |
 
-- [x] `MAX_CANDIDATES = 25000` — `src/lib/limits.ts`, checked in the crawler loop and again before ingest
-- [x] `MAX_SPEND_USD = 150` — `SpendMeter` accumulates the token usage Bedrock *reports* on every response, not an estimate; throws `LimitExceeded` on breach. Plus a deterministic pre-flight that refuses to start a classify pass it cannot finish inside the budget.
-- [x] `MAX_SEARCH_REQUESTS = 3000` — every request through the RT client takes from the budget *before* it goes out, including retries, so a retry loop trips the cap instead of spinning
-- [ ] Actual spend logged below when the run completes
+Serving code is `mcp-aki/` — it holds both corpora as `Corpus<D>` descriptors and caches them
+separately, so a container answering only AKI questions never downloads the court index.
+`mcp-rt/` is ingest only. `/health` reports both and survives one being absent.
 
-## Data
+## Where the numbers stand
 
-- [x] Pool built — **21,929 unique candidates** in **1,231 search requests** (~4 min). Channels, unique-at-first-sight: vocab 20,769 · paragraphs 1,022 · taxonomy 138.
-- [x] PDFs downloaded — **21,926 of 21,929**; 3 without a text layer, **0 failures, 0 429s** at
-      concurrency 25 (~25 min). Corpus is 666M chars, 3.6GB of PDF.
-- [~] Classified — **4,876 of 21,926** so far: 668 JAH (13.7%), 4,208 EI, 398 escalated (8.2%).
-      Stopped by a Bedrock daily token cap, not by the spend limit. Resumable per row.
-- [ ] Survivors embedded — docs, chunks, index MB: ____
-- [~] Bedrock spend so far: **$33.52** of $150 (Haiku $27.56 / 4,983 calls; Sonnet $5.96 / 400 calls).
-      Search requests used: **1,231** of 3,000 for the pool, plus ~180 for the audit and mining probes.
+```
+pool              21,929 candidates (1,231 search requests, ~4 min)
+in scope (2007+)  21,331
+classified         8,713   41%    1,136 JAH (13.0%), 9.9% escalated to Sonnet
+indexed            1,136   2022-2026
+remaining         12,618   2007-2021, plus 40 undated
+Bedrock spend     $65.82   of MAX_SPEND_USD 150
+```
 
-## Validation
+## The one blocker
 
-- [x] Adversarial out-of-pool sample (50, near-miss vocabulary) → **3 of 50** classified JAH (6%).
-      `yarn audit`, full output in `data/audit.json`. Drawn from 18 near-miss terms chosen to have
-      no prefix overlap with any seed wildcard, each confirmed absent from the pool before scoring.
+**Finishing no longer fits in $150.** The measured rate has crept from $0.00656 to **$0.00744** per
+decision as escalation rose from 8.2% to 9.9% — older decisions are more ambiguous, so more of them
+reach Sonnet. Remaining 12,618 × $0.00744 = **$94**, total **$160**.
 
-      Reading the three by hand: **two are genuine leaks**, one is a classifier false positive.
-      - `3-26-2137/3` (`turvakaamera`) — a prisoner filmed by a toilet camera, arguing explicitly
-        for esialgne õiguskaitse "tema eraelu kaitseks". Squarely on topic. A pure vocabulary gap:
-        `videovalv*` is a seed, `turvakaamera` is not.
-      - `3-26-2664/3` (`saladuse hoidmise kohustus`) — an advocate seeking release from
-        kutsesaladus under AdvS § 45, weighing "asjaosaliste eraelu ning ärisaladuste kaitse".
-        The *taxonomy* channel has this exact node (kood 342368211), but märksõnad are only
-        populated for annotated decisions, so the node never returned it.
-      - `3-24-3484/11` (`nime avalikustamine`) — a nature-conservation and building-rights case.
-        Read in full, the *only* line in it touching personal data is §18: "Kuna otsuse sisu
-        mõistmiseks ei ole kaebaja nime avalikustamine vajalik, tuleb tema nimi …" — the standard
-        anonymisation-at-publication clause, which is exactly the trap HANDOFF flags as present in
-        ~7% of decisions and which sank Nova Pro. Haiku fell for it here despite the prompt naming
-        it. Counted as a classifier false positive, not a leak.
+The pre-flight in `classifyAll` will refuse to start rather than abort part-way, so the next run
+stops immediately with a clear message. To continue, one of:
 
-      **So ~4% leak in the region deliberately chosen to be hardest.** This is not the corpus-wide
-      leak rate and should not be quoted as one — every term was picked *because* no seed covers
-      it. The corpus-wide figure is necessarily far lower, and the honest statement is that it
-      remains unmeasured: at a base rate under 1.4%, a uniform sample of 50 would be expected to
-      contain well under one positive and could not distinguish 0% leak from 3%.
-- [ ] Mine seed vocabulary from confirmed positives; re-run pool, record the delta
-- [ ] Spot-check rejects for wrong "no"s
+- **raise `MAX_SPEND_USD`** in `src/lib/limits.ts` to ~170 (the constant is deliberately the user's
+  decision, not a default to be nudged);
+- **raise `MIN_YEAR`** in `src/ingest/classify.ts` — the lawyer set 2007 because pre-IKS practice is
+  a different regime; 2012 or 2015 would cut the bill proportionally;
+- **switch to Bedrock batch inference**, ~50% cheaper, which fixes the budget *and* the quota below.
+  ~2h of rework: batch takes Anthropic-format JSONL in S3, not Converse calls. Quotas are healthy
+  (100k records/job, 100 concurrent) and a Bedrock service role would need adding to terraform.
 
-## For the user
+**A second, independent blocker: a Bedrock per-day token cap.** Roughly 25M Haiku input tokens, then
+`ThrottlingException: Too many tokens per day` — not retryable, so the adaptive backoff cannot wait
+it out. It is not in Service Quotas (only per-minute, 5M TPM, nowhere near), so it needs a Support
+case. Observed allowance per session: 4,876 → 2,543 → 1,294 rows, so it is a rolling window rather
+than a clean daily reset. Without lifting it, finishing takes several more sessions regardless of
+budget.
 
-- [ ] Tell the lawyer: her `annotatsiooniSisu` search returns ~10% of what full text does
-      (`"KrMS § 214"` gives 8 there vs 86 in full text — re-confirmed 2026-09-16). She is seeing
-      annotated Riigikohus decisions only. This is worth telling her now, independently of the
-      corpus — it changes how she should search today.
-- [ ] Optional: have her review `research/seeds.json` paragraphs once the corpus exists —
-      not a blocker, the list is already derived.
+## How to continue
 
+```bash
+cd mcp-rt
+yarn ingest --index-only   # rebuild the index from whatever is already classified (free, ~1 min)
+yarn classify              # next batch; stops itself on the daily cap, resumes free next time
+yarn audit                 # adversarial out-of-pool sample
+yarn verify                # sample rejects, re-ask Sonnet
+yarn mine                  # mine vocabulary from confirmed positives (written, never run)
+```
+
+The usual loop is `yarn classify` then `yarn ingest --index-only`. Classification appends per row to
+`data/classified.jsonl` and to S3, so an interrupted run never re-pays. Embedding reuses vectors by
+decision id, so re-indexing early costs nothing later.
+
+Deploying serving changes: `cd mcp-aki && ./scripts/build-lambda.sh && cd ../terraform &&
+terraform apply`. The index lives in S3 and is picked up on the next Lambda cold start — no deploy
+needed after a re-index.
+
+## What was measured, and what it changed
+
+- **Search parallelises**: 63 req/s at concurrency 20, zero 429s. `HANDOFF.md`'s "~8s/request
+  serially, parallelism untested" is stale. Pool build is 4 minutes, not the projected 2.2 hours.
+- **There is no märksõna field on the search body.** Ten plausible spellings all silently returned
+  the unfiltered 725,792. Taxonomy is a separate endpoint,
+  `GET /kohtuteave/liigitus/{kood}/kohtulahendid`, found by reading the site's Angular bundle.
+- **Decisions are twice as long as recorded**: median 20,555 chars against 10,369, mean 30,377,
+  p99 190k, max 2.3M. This drove both the cost overrun and an 80-chunk cap per decision, chosen
+  round-robin across sections so a capped decision keeps coverage of its reasoning.
+- **Estonian tokenises at ~2.45 chars/token**, so the 12k-char excerpt costs ~4,900 tokens, not the
+  4,000 assumed. With a 21.9k pool and 9.9% escalation, classification is ~2x the $75 estimate.
+- **Gold set reproduces exactly**: 14/17, same three rejects. The classifier config is the one that
+  was measured; do not change model, excerpt size or the 0.9 escalation threshold without re-running
+  `research/step4.json`.
+
+## Validation done
+
+- **Adversarial out-of-pool sample** (`data/audit.json`): 3 of 50 near-miss decisions classified JAH.
+  Read in the source: two are genuine leaks (a `turvakaamera` vocabulary gap; a `kutsesaladus` case
+  the taxonomy node could not reach because märksõnad exist only for annotated decisions), one is a
+  classifier false positive on the anonymisation-at-publication clause. **~4% leak in the region
+  deliberately chosen to be hardest** — not a corpus-wide rate, and the corpus-wide rate remains
+  unmeasured because a uniform sample of 50 could not distinguish 0% from 3% at this base rate.
+- **Reject spot-check** (`data/verify.json`): **2.5% wrong-no** (3 of 120, stratified). 0% in the
+  low-confidence band, 5% in `>=0.95` — which holds 94% of rejects and never escalates. So raising
+  the escalation threshold would not catch them. All three flips came back at low Sonnet confidence,
+  so they are borderline rather than clear misses. Extrapolates to ~160 decisions missing so far.
+- **Live answers verified against source text** three times. Two fabrications were found and fixed by
+  tooling rather than prompting: a cited `KrMS § 64` that appears nowhere in the decision, and a
+  claim that AvTS ends at § 58 when it runs to § 69. Both were the same shape — correct conclusion,
+  invented statutory hook, no tool able to check it. After adding `pattern` and `get_statute`, a
+  later answer cited 9 decisions and 12 statutory provisions with zero errors.
+
+## Still open
+
+- [ ] Finish classification, 2007–2021 (blocked on the budget/quota decision above)
+- [ ] `yarn mine` — written, never run; proposes new seed wildcards with a measured delta
+- [ ] Tell the lawyer her `annotatsiooniSisu` search returns ~10% of full text
+      (`"KrMS § 214"`: 8 there vs 86 in full text, re-confirmed 2026-09-16)
+- [ ] Optional: raise the API Lambda's memory if the court index grows much past ~150MB
 
 ## Log
 
-### 2026-09-16/17 — build, pool, download, classification paused
+**2026-09-16/17** — built, deployed, 41% classified. Surprises are in *What was measured* above.
+The three that cost the most time: the search endpoint parallelising after the brief said it was
+untested; the missing märksõna field sending me into the site's JS bundle; and the corpus being
+twice as long as recorded, which is the root of the entire cost overrun.
 
-**Done and verified**
+**2026-09-17** — added `get_statute` after a live answer invented a statutory fact nothing could
+check. Two bugs in that fix were caught by testing it against the case that motivated it: counting
+bare `§` cross-references made AvTS look like it ran to § 107, and concatenating a superscript
+rendered `§ 32¹` as `§ 321`, naming a provision that does not exist. The same superscript bug then
+turned up in `extractNorms` and was fixed there too.
 
-- Whole pipeline written and typechecking; `mcp-aki` extended to serve both corpora as six tools.
-  Regression-checked locally: AKI still loads 657 docs / 12,113 chunks and answers real queries.
-- Infrastructure applied (13 added, 0 changed) — nothing existing was touched.
-- Pool: **21,929 unique candidates in 1,231 search requests**, ~4 min.
-- Download: **21,926 texts, 3 without a text layer, 0 failures, 0 429s** at concurrency 25, ~25 min.
-- Gold-set check reproduces HANDOFF exactly: **14/17**, and the same three rejects, so the prompt
-  and plumbing behave as measured.
-- Adversarial out-of-pool audit: **3 of 50**, two genuine leaks and one false positive, each read
-  in the source rather than taken from the classifier's own reason string.
-
-**Surprises, in the order they cost time**
-
-1. **The search endpoint parallelises, and HANDOFF's "~8s/request serially" was stale.** It sustains
-   63 req/s at concurrency 20 with zero 429s. Pool build went from a projected 2.2h to 4 minutes.
-2. **There is no märksõna field on the search body.** Ten plausible spellings were all silently
-   ignored — they returned the unfiltered 725,792. The taxonomy channel is a *different endpoint*,
-   `GET /kohtuteave/liigitus/{kood}/kohtulahendid`, found by reading the site's Angular bundle.
-   Worth knowing before anyone re-derives the seed list.
-3. **Decisions are twice as long as recorded.** Median 20,555 chars against HANDOFF's 10,369; mean
-   30,377, p99 190k, max 2.3M. This is the root cause of the cost overrun below, and it also forced
-   a chunk cap (80/decision, round-robin across sections) so that mass criminal judgments could not
-   contribute 1,600 near-identical passages each.
-4. **Estonian tokenises at ~2.45 chars/token, so 12k chars costs ~4,900 tokens, not 4,000.** Combined
-   with a 21.9k pool (not ~18k) and 8.2% escalation (not 5%), the classification run projects to
-   **$144**, not the $75 in HANDOFF — 1.9x. It still fits under $150, but with under 2% headroom,
-   which is why `EMBED_RESERVE_USD` now holds back the embedding budget explicitly: without it the
-   two stages race and classification wins, leaving no index.
-5. **The actual stopper was a Bedrock quota, not the budget.** At 4,876 rows:
-   `ThrottlingException: Too many tokens per day, please wait before trying again` (HTTP 429, not
-   retryable — `$retryable: undefined`). ~25M Haiku input tokens in about an hour. The adaptive
-   backoff in `bedrock.ts` is built for per-minute throttling and cannot wait out a per-day cap, so
-   the run surfaced it rather than spinning. This is a per-account limit, so it will recur on any
-   single-day attempt at the full pool.
-
-**Before resuming, decide two things**
-
-- **The daily token quota.** Either request a quota increase for Haiku 4.5 in eu-central-1, or split
-  the run across nights — resume is free, so 3-4 evenings of `yarn ingest` costs nothing extra.
-  A third option worth pricing: Bedrock **batch inference** is ~50% cheaper and asynchronous, which
-  would fix the budget margin and the quota in one move, at the cost of reworking `classify.ts`.
-- **The $150 cap.** The projection is $147 for the whole pipeline. It fits on the central estimate
-  but the margin is inside the estimate's own error bars. Raising `MAX_SPEND_USD` to ~165 would
-  remove the risk of aborting at 99% and leave room for the reject spot-check; actual spend would
-  still land near $149. The constant is deliberately left at 150 — that is the number you set.
-
-**Still open**
-
-- Embedding + index write (needs classification finished).
-- Deploy the rebuilt `mcp-aki` artifact — **not yet deployed**, so the live connector still serves
-  only the three AKI tools and is unaffected by any of this.
-- `yarn mine` (vocabulary from confirmed positives) and `yarn verify` (reject spot-check) — both
-  written and ready, neither run.
-
+**2026-09-17** — norms indexed to lg/p precision at the lawyer's request, both precisions stored so
+`AvTS § 35` still matches a decision citing only `§ 35 lg 1 p 11`. Narrowing an existing search
+would have been the worse failure.
