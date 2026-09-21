@@ -170,7 +170,23 @@ export const flushVerdicts = async (): Promise<number> => {
 	return all.length;
 };
 
-export const classifyAll = async (candidates: Candidate[]): Promise<ClassifyStats> => {
+/**
+ * Oldest decision year worth classifying.
+ *
+ * The lawyer's call, not an engineering one: Estonian data-protection law before IKS 2007 is a
+ * different regime, so those decisions would cost budget to classify and then not be cited. Drops
+ * 638 candidates from the pool and is what brings the run inside MAX_SPEND_USD.
+ *
+ * Decisions whose date could not be parsed (year 0) are kept — an unknown date is not an old one.
+ */
+export const MIN_YEAR = Number(process.env.MIN_YEAR ?? 2007);
+
+export const inScope = (c: Candidate): boolean => c.year === 0 || c.year >= MIN_YEAR;
+
+export const classifyAll = async (rawCandidates: Candidate[]): Promise<ClassifyStats> => {
+	const candidates = rawCandidates.filter(inScope);
+	const dropped = rawCandidates.length - candidates.length;
+	if (dropped) console.log(`skipping ${dropped} candidates older than ${MIN_YEAR}`);
 	mkdirSync(DATA, {recursive: true});
 	const done = loadVerdicts();
 
