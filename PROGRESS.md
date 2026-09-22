@@ -3,14 +3,15 @@
 Read this first. `HANDOFF.md` is the original design brief and is still accurate about *why* things
 are built the way they are; this file is what is true *now*. Probe artifacts are in `research/`.
 
-**Status:** live and serving, corpus 41% classified. Nothing is running. Every stage resumes from
-disk — there is no work to redo, only work to continue.
+**Status:** live and serving. Court corpus 41% classified; the aki.ee guidance corpus is complete.
+Nothing is running. Every stage resumes from disk — there is no work to redo, only work to
+continue.
 
 ---
 
 ## What is deployed
 
-One MCP endpoint, two corpora, seven tools. Connector URL:
+One MCP endpoint, three corpora, ten tools. Connector URL:
 `cd terraform && terraform output -raw aki_mcp_url` (registered in `~/.claude.json` user scope as
 `aki`; the same URL is added in Claude Desktop).
 
@@ -18,11 +19,75 @@ One MCP endpoint, two corpora, seven tools. Connector URL:
 |---|---|
 | `search_decisions`, `get_decision`, `list_decisions` | AKI, 657 decisions / 12,113 chunks |
 | `search_court_decisions`, `get_court_decision`, `list_court_decisions` | courts, **1,136 decisions / 25,404 chunks, 2022–2026** |
+| `search_guidance`, `get_guidance`, `list_guidance` | aki.ee guidance, **1,272 documents / 20,028 chunks** |
 | `get_statute` | Riigi Teataja consolidated legislation, live (not indexed) |
 
-Serving code is `mcp-aki/` — it holds both corpora as `Corpus<D>` descriptors and caches them
+Serving code is `mcp-aki/` — it holds all three corpora as `Corpus<D>` descriptors and caches them
 separately, so a container answering only AKI questions never downloads the court index.
-`mcp-rt/` is ingest only. `/health` reports both and survives one being absent.
+`mcp-rt/` is ingest only for the court corpus; guidance ingest lives in `mcp-aki/src/ingest/`.
+
+## The guidance corpus (aki.ee), added 2026-09-22
+
+The regulator's own manuals, FAQs, pages and attached PDFs — **normative** material, where the other
+two corpora are **adjudicative**. That distinction is the whole reason it is a separate index: merged
+into `search_decisions`, a paragraph of the üldjuhend would be cited as though it were binding, which
+is the same failure class as the invented `KrMS § 64` that motivated `get_statute`.
+
+```
+sitemap             576 URLs, minus /en/ mirrors and the error pages -> 552
+pages crawled       545
+attachments         802 unique links, 732 kept on-site
+final corpus      1,272 docs / 20,028 chunks / 17.0 MB text
+index             s3://hycapital-aki-rag/guidance/  (30.7 MB vectors + 4.7 MB meta)
+embed cost        ~$1.40
+```
+
+Rebuild: `yarn guidance` (crawl, resumable from disk) then `yarn ingest:guidance` (chunk + embed).
+The crawl is the slow half at ~12 min; the build is a full rebuild every time, which is affordable
+because everything is local by then.
+
+**What the crawl cost to learn**, all now encoded in `guidance.ts`:
+
+- **The sitemap's base URL is misconfigured** — every entry is `http://default/…` and must be
+  rewritten to the real host or nothing resolves.
+- **aki.ee serves missing pages with HTTP 200** and a "Lehte ei leitud" body. The status code cannot
+  be trusted; `isSoftNotFound` checks the title. This cost real time — a page I sampled early to
+  decide the extraction strategy was a soft 404, and its *navigation menu* was what made the
+  guidance documents look like they were listed on the index pages.
+- **The PDFs are not in the sitemap.** They hang off individual node pages, and the listing pages
+  show only two "recent" highlights — so sampling a listing page suggests there are almost none.
+- **`fetch` had no timeout.** One hung connection parks a serial crawl indefinitely; it sat at
+  500/552 for hours looking like a slow page rather than a wedged one. 30s `AbortSignal.timeout`.
+- **The sidebar widget links the same PDFs from every page**, so first-parent-wins types the whole
+  attachment set from one arbitrary page. All parents are kept and a file with ≥20 of them is
+  treated as chrome.
+- **The same guidance is published at two paths** (legacy `/dokumendid/<slug>` and current
+  `/documents/YYYY-MM/`), so both üldjuhendid were doubled. Deduped on text hash — two copies would
+  pair up through the rerank pool and halve the distinct results a query can return.
+
+**Chunking.** `chunkDocument` now takes a heading pattern. The AKI whitelist of 16 ALL-CAPS headings
+matches nothing in a manual, so the AvTS üldjuhend collapsed into one `PREAMBUL` section of 136
+chunks; `NUMBERED_HEADING_RE` gives it 83 sections. `excerptDocument` takes the same pattern, so
+`get_guidance`'s `section` argument has something to match. 80-chunk cap per document, round-robin
+across sections, same as the court corpus — 29 documents hit it.
+
+**Verified live against source text**, the same way the two earlier fabrications were caught:
+`pattern: "15 tööpäeva"` on the üldjuhend returns the two occurrences that are really there (lines
+449 and 455); a fabricated `AvTS § 999` is refused with an explicit do-not-cite; a news-shaped query
+returns no news. One bug found doing this: the not-found message called every document "this
+decision", which would have described guidance as a decision in the one place designed to stop
+exactly that.
+
+**Known limitations, neither blocking:**
+
+- **893 of 1,272 documents are typed `muu`.** The PDFs live in one flat `/documents/YYYY-MM/` store,
+  so their only type signal is the linking page, and the sidebar defeats that for most of them. They
+  are all searchable; `type: "juhend"` merely under-reports at 28. Fixing it means reading the link's
+  surrounding markup to tell a body link from a sidebar one.
+- **Short HTML pages all chunk as `PREAMBUL`**, having no numbered headings. Harmless — they are
+  short enough that the whole page is one or two chunks anyway.
+- News is indexed but excluded from `search_guidance` unless `type: "news"` is passed, because dated
+  announcements read as current obligation. `list_guidance` still reaches all 332.
 
 ## Where the numbers stand
 
@@ -119,6 +184,8 @@ needed after a re-index.
 - [ ] Tell the lawyer her `annotatsiooniSisu` search returns ~10% of full text
       (`"KrMS § 214"`: 8 there vs 86 in full text, re-confirmed 2026-09-16)
 - [ ] Optional: raise the API Lambda's memory if the court index grows much past ~150MB
+- [ ] Guidance: type the 893 `muu` PDFs properly by reading body vs sidebar links
+- [ ] Guidance re-crawl is manual; the AKI decisions crawl has a monthly EventBridge rule, this does not
 
 ## Log
 
@@ -132,6 +199,12 @@ check. Two bugs in that fix were caught by testing it against the case that moti
 bare `§` cross-references made AvTS look like it ran to § 107, and concatenating a superscript
 rendered `§ 32¹` as `§ 321`, naming a provision that does not exist. The same superscript bug then
 turned up in `extractNorms` and was fixed there too.
+
+**2026-09-22** — added the aki.ee guidance corpus, 1,272 documents, live. Jev (TypeSafe) was
+evaluated as a cheaper classifier for the court corpus and rejected: it ties Haiku on the 87-case
+gold set (14/17, 1 false positive) but agrees on only 55% of the 1,136 JAH across the 8,713 already
+classified, and the vendor documents lower accuracy outside English. The 87-case test had no power
+to show that — full numbers in `research/`.
 
 **2026-09-17** — norms indexed to lg/p precision at the lawyer's request, both precisions stored so
 `AvTS § 35` still matches a decision citing only `§ 35 lg 1 p 11`. Narrowing an existing search

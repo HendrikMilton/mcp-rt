@@ -1,0 +1,1046 @@
+[
+ {
+  "key": "gold:3-26-1048/10",
+  "nr": "3-26-1048/10",
+  "chars": 19001,
+  "ms": 1151,
+  "noul": 0.88,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5268,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:3-23-2523/20",
+  "nr": "3-23-2523/20",
+  "chars": 30257,
+  "ms": 1162,
+  "noul": 0.06,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5242,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:5-25-48/2",
+  "nr": "5-25-48/2",
+  "chars": 8963,
+  "ms": 1038,
+  "noul": 0.95,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 3989,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:3-21-1243/47",
+  "nr": "3-21-1243/47",
+  "chars": 20281,
+  "ms": 1184,
+  "noul": 0.78,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5154,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:1-22-1608/101",
+  "nr": "1-22-1608/101",
+  "chars": 8637,
+  "ms": 986,
+  "noul": 0.96,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4181,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:2-21-3906/31",
+  "nr": "2-21-3906/31",
+  "chars": 18061,
+  "ms": 1261,
+  "noul": 0.97,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5128,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:3-20-1449/54",
+  "nr": "3-20-1449/54",
+  "chars": 35824,
+  "ms": 817,
+  "noul": 0.98,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5299,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:5-21-30/14",
+  "nr": "5-21-30/14",
+  "chars": 20648,
+  "ms": 798,
+  "noul": 0.98,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5081,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:2-21-5736/29",
+  "nr": "2-21-5736/29",
+  "chars": 27519,
+  "ms": 815,
+  "noul": 0.96,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5167,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:1-17-2359/122",
+  "nr": "1-17-2359/122",
+  "chars": 44963,
+  "ms": 817,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5417,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:3-19-1207/21",
+  "nr": "3-19-1207/21",
+  "chars": 27872,
+  "ms": 774,
+  "noul": 0.99,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5121,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:1-19-8262/17",
+  "nr": "1-19-8262/17",
+  "chars": 32354,
+  "ms": 801,
+  "noul": 0.68,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5345,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:3-15-2079/28",
+  "nr": "3-15-2079/28",
+  "chars": 30901,
+  "ms": 842,
+  "noul": 0.98,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5159,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:3-1-1-42-14",
+  "nr": "3-1-1-42-14",
+  "chars": 26248,
+  "ms": 815,
+  "noul": 0.96,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5213,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:3-1-1-41-14",
+  "nr": "3-1-1-41-14",
+  "chars": 22375,
+  "ms": 883,
+  "noul": 0.97,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5301,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:3-3-1-15-10",
+  "nr": "3-3-1-15-10",
+  "chars": 42897,
+  "ms": 853,
+  "noul": 0.04,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5329,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "gold:3-3-1-98-06",
+  "nr": "3-3-1-98-06",
+  "chars": 33864,
+  "ms": 789,
+  "noul": 0.97,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5062,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-24-137369/21",
+  "nr": "2-24-137369/21",
+  "chars": 22910,
+  "ms": 761,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5576,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-23-6730/65",
+  "nr": "2-23-6730/65",
+  "chars": 63953,
+  "ms": 837,
+  "noul": 0.38,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5824,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:3-25-1216/7",
+  "nr": "3-25-1216/7",
+  "chars": 1661,
+  "ms": 613,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1199,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-21-9444/44",
+  "nr": "2-21-9444/44",
+  "chars": 88196,
+  "ms": 799,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5274,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-22-18822/53",
+  "nr": "2-22-18822/53",
+  "chars": 55714,
+  "ms": 850,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5256,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-24-139711/12",
+  "nr": "2-24-139711/12",
+  "chars": 8081,
+  "ms": 617,
+  "noul": 0.21,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 3737,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-24-138041/6",
+  "nr": "2-24-138041/6",
+  "chars": 5528,
+  "ms": 629,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2614,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-24-5323/31",
+  "nr": "1-24-5323/31",
+  "chars": 43258,
+  "ms": 812,
+  "noul": 0.41,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5400,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-23-146564/15",
+  "nr": "2-23-146564/15",
+  "chars": 18810,
+  "ms": 801,
+  "noul": 0.06,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5181,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-25-553/3",
+  "nr": "2-25-553/3",
+  "chars": 6145,
+  "ms": 642,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2981,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-22-127422/5",
+  "nr": "2-22-127422/5",
+  "chars": 6571,
+  "ms": 640,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 3139,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:3-22-1514/22",
+  "nr": "3-22-1514/22",
+  "chars": 8351,
+  "ms": 598,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4057,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-21-11019/11",
+  "nr": "2-21-11019/11",
+  "chars": 20260,
+  "ms": 809,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5514,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:3-22-2141/7",
+  "nr": "3-22-2141/7",
+  "chars": 2004,
+  "ms": 615,
+  "noul": 0.07,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1305,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-22-5030/7",
+  "nr": "2-22-5030/7",
+  "chars": 14689,
+  "ms": 807,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5309,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-22-100679/12",
+  "nr": "2-22-100679/12",
+  "chars": 6112,
+  "ms": 617,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2997,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:3-22-105/38",
+  "nr": "3-22-105/38",
+  "chars": 2306,
+  "ms": 673,
+  "noul": 0.08,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1388,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:3-21-1703/15",
+  "nr": "3-21-1703/15",
+  "chars": 19407,
+  "ms": 846,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5272,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:3-21-956/13",
+  "nr": "3-21-956/13",
+  "chars": 16711,
+  "ms": 807,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5253,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-21-19277/17",
+  "nr": "2-21-19277/17",
+  "chars": 9870,
+  "ms": 816,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4412,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-18-11444/100",
+  "nr": "2-18-11444/100",
+  "chars": 82040,
+  "ms": 847,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5635,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-19-3254/72",
+  "nr": "1-19-3254/72",
+  "chars": 5888,
+  "ms": 607,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2834,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-18-10378/85",
+  "nr": "1-18-10378/85",
+  "chars": 9607,
+  "ms": 833,
+  "noul": 0.06,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4223,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-21-7689/6",
+  "nr": "1-21-7689/6",
+  "chars": 15905,
+  "ms": 897,
+  "noul": 0.65,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5281,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-20-6530/26",
+  "nr": "1-20-6530/26",
+  "chars": 14161,
+  "ms": 867,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5151,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-19-19808/15",
+  "nr": "2-19-19808/15",
+  "chars": 9087,
+  "ms": 793,
+  "noul": 0.26,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4101,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:3-20-2129/10",
+  "nr": "3-20-2129/10",
+  "chars": 20103,
+  "ms": 864,
+  "noul": 0.07,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5334,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-10-15486/66",
+  "nr": "2-10-15486/66",
+  "chars": 11143,
+  "ms": 809,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5096,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-20-8091/7",
+  "nr": "1-20-8091/7",
+  "chars": 4231,
+  "ms": 626,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2291,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-20-8004/8",
+  "nr": "1-20-8004/8",
+  "chars": 8148,
+  "ms": 670,
+  "noul": 0.04,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 3839,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:3-17-1473/16",
+  "nr": "3-17-1473/16",
+  "chars": 854,
+  "ms": 629,
+  "noul": 0.04,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 861,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-17-7724/6",
+  "nr": "1-17-7724/6",
+  "chars": 7318,
+  "ms": 631,
+  "noul": 0.04,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 3608,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-16-10790/13",
+  "nr": "2-16-10790/13",
+  "chars": 15508,
+  "ms": 775,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5139,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-16-10999/18",
+  "nr": "2-16-10999/18",
+  "chars": 16257,
+  "ms": 813,
+  "noul": 0.04,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5209,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-17-11627/7",
+  "nr": "2-17-11627/7",
+  "chars": 10367,
+  "ms": 849,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4688,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-16-9094/14",
+  "nr": "1-16-9094/14",
+  "chars": 9948,
+  "ms": 835,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4385,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-16-14118/30",
+  "nr": "2-16-14118/30",
+  "chars": 22408,
+  "ms": 838,
+  "noul": 0.04,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5233,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:3-17-21/2",
+  "nr": "3-17-21/2",
+  "chars": 12834,
+  "ms": 918,
+  "noul": 0.04,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5045,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:4-16-2279/12",
+  "nr": "4-16-2279/12",
+  "chars": 3984,
+  "ms": 606,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2202,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-17-101/2",
+  "nr": "1-17-101/2",
+  "chars": 9666,
+  "ms": 859,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4415,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:4-15-8798/8",
+  "nr": "4-15-8798/8",
+  "chars": 2202,
+  "ms": 695,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1449,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:4-15-9410/9",
+  "nr": "4-15-9410/9",
+  "chars": 1988,
+  "ms": 622,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1391,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:4-15-8958/9",
+  "nr": "4-15-8958/9",
+  "chars": 1589,
+  "ms": 662,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1174,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-15-8871/4",
+  "nr": "1-15-8871/4",
+  "chars": 8429,
+  "ms": 650,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4147,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:4-15-8061/3",
+  "nr": "4-15-8061/3",
+  "chars": 3889,
+  "ms": 653,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2160,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-11-5994/5",
+  "nr": "1-11-5994/5",
+  "chars": 5590,
+  "ms": 635,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2880,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:4-10-2989/13",
+  "nr": "4-10-2989/13",
+  "chars": 29431,
+  "ms": 801,
+  "noul": 0.05,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5236,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:4-10-2503/20",
+  "nr": "4-10-2503/20",
+  "chars": 3790,
+  "ms": 644,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2186,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-11-3226/7",
+  "nr": "1-11-3226/7",
+  "chars": 4711,
+  "ms": 614,
+  "noul": 0.04,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2507,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-11-5965/2",
+  "nr": "1-11-5965/2",
+  "chars": 4708,
+  "ms": 624,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2522,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:4-08-6916\\3",
+  "nr": "4-08-6916\\3",
+  "chars": 3380,
+  "ms": 612,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1861,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-08-10733\\3",
+  "nr": "1-08-10733\\3",
+  "chars": 3056,
+  "ms": 648,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1847,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-08-14324\\2",
+  "nr": "1-08-14324\\2",
+  "chars": 5800,
+  "ms": 743,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2930,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:4-08-9862\\3",
+  "nr": "4-08-9862\\3",
+  "chars": 1114,
+  "ms": 646,
+  "noul": 0.22,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1226,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:4-08-10632\\1",
+  "nr": "4-08-10632\\1",
+  "chars": 2693,
+  "ms": 616,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1580,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-07-1056/11",
+  "nr": "2-07-1056/11",
+  "chars": 4105,
+  "ms": 583,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2128,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-07-1497/3",
+  "nr": "2-07-1497/3",
+  "chars": 5432,
+  "ms": 654,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2633,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-06-38262/4",
+  "nr": "2-06-38262/4",
+  "chars": 3261,
+  "ms": 618,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1820,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-06-38671/9",
+  "nr": "2-06-38671/9",
+  "chars": 12327,
+  "ms": 789,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 5313,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-07-32288/2",
+  "nr": "2-07-32288/2",
+  "chars": 3563,
+  "ms": 631,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 1919,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:4-06-3844\\5",
+  "nr": "4-06-3844\\5",
+  "chars": 1121,
+  "ms": 652,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 939,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-06-13513\\4",
+  "nr": "1-06-13513\\4",
+  "chars": 4935,
+  "ms": 617,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2605,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-06-14437\\2",
+  "nr": "1-06-14437\\2",
+  "chars": 4726,
+  "ms": 620,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2504,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-06-14866\\3",
+  "nr": "1-06-14866\\3",
+  "chars": 10182,
+  "ms": 788,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4863,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:1-06-13373\\2",
+  "nr": "1-06-13373\\2",
+  "chars": 10395,
+  "ms": 845,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4779,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-05-1683/6",
+  "nr": "2-05-1683/6",
+  "chars": 9638,
+  "ms": 804,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 4422,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-04-1053/2",
+  "nr": "2-04-1053/2",
+  "chars": 6693,
+  "ms": 602,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 3309,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-05-22078/2",
+  "nr": "2-05-22078/2",
+  "chars": 5002,
+  "ms": 661,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2461,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-06-129/6",
+  "nr": "2-06-129/6",
+  "chars": 7284,
+  "ms": 638,
+  "noul": 0.02,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 3311,
+   "output_tokens": 20
+  }
+ },
+ {
+  "key": "rand:2-05-16279/1",
+  "nr": "2-05-16279/1",
+  "chars": 5379,
+  "ms": 639,
+  "noul": 0.03,
+  "model": "jev-1.13.0",
+  "usage": {
+   "input_tokens": 2663,
+   "output_tokens": 20
+  }
+ }
+]

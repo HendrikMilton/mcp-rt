@@ -1,0 +1,72 @@
+{
+ "ranAt": "2026-09-21",
+ "model": "jev-1.13.0",
+ "excerptChars": 12000,
+ "threshold": 0.5,
+ "gold87": {
+  "jev": {
+   "gold": 14,
+   "falsePositives": 1
+  },
+  "haiku": {
+   "gold": 14,
+   "falsePositives": 1
+  },
+  "sonnet": {
+   "gold": 14,
+   "falsePositives": 0
+  }
+ },
+ "bulk": {
+  "n": 8713,
+  "overallAgreement": 0.9177,
+  "haikuJah": 1136,
+  "jevAgreesOnJah": 626,
+  "haikuEi": 7577,
+  "jevAgreesOnEi": 7370,
+  "jevJahRate": 0.0956,
+  "haikuJahRate": 0.1304,
+  "thresholdSweep": {
+   "0.4": {
+    "agreement": 0.9106,
+    "haikuJahKept": 696
+   },
+   "0.5": {
+    "agreement": 0.9177,
+    "haikuJahKept": 626
+   },
+   "0.6": {
+    "agreement": 0.9183,
+    "haikuJahKept": 558
+   },
+   "0.7": {
+    "agreement": 0.9154,
+    "haikuJahKept": 478
+   },
+   "0.8": {
+    "agreement": 0.9117,
+    "haikuJahKept": 396
+   },
+   "0.9": {
+    "agreement": 0.8991,
+    "haikuJahKept": 258
+   }
+  }
+ },
+ "cost": {
+  "jevPerMInputUsd": 0.042,
+  "jevOutputFree": true,
+  "haikuPerMInputUsd": 1,
+  "haikuPerMOutputUsd": 5,
+  "jevMeanInputTokens": 3833,
+  "haikuMeanInputTokens": 4900,
+  "bulkRunUsd": 1.8
+ },
+ "latencyMs": {
+  "jevMedian": 788,
+  "jevP90": 883,
+  "haikuMedian": 2056,
+  "haikuP90": 2500
+ },
+ "verdict": "Rejected. Ties Haiku on the 87-case gold set but agrees on only 55.1% of the 1,136 JAH across 8,713 classified. Vendor documents lower accuracy outside English; corpus is Estonian."
+}
