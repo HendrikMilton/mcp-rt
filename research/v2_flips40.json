@@ -1,0 +1,682 @@
+[
+ {
+  "id": "431751110",
+  "nr": "2-25-9288/21",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Käsitleb vastutustundlikku laenamist, mitte andmekaitset",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1653,
+  "usd": 0.0459506,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 18798,
+  "dpHits": 1,
+  "per10k": 0.5
+ },
+ {
+  "id": "336493932",
+  "nr": "2-21-16706/18",
+  "vastus": "EI",
+  "kindlus": 0.75,
+  "pohjus": "Käsitleb eeltõendamismenetlust, mitte andmetöötluse õiguspärasust ennast",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1701,
+  "usd": 0.0457626,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 30542,
+  "dpHits": 8,
+  "per10k": 2.6
+ },
+ {
+  "id": "375838381",
+  "nr": "1-24-3865/5",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Kelmus/identiteedivargus karistusõiguslik, mitte andmekaitseõiguse hindamine",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1844,
+  "usd": 0.0431526,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 10282,
+  "dpHits": 4,
+  "per10k": 3.9
+ },
+ {
+  "id": "354967169",
+  "nr": "2-22-1081/70",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Vaidlus au teotamise, ebaõigete andmete ja aegumise üle",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 2942,
+  "usd": 0.046672599999999995,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 23892,
+  "dpHits": 2,
+  "per10k": 0.8
+ },
+ {
+  "id": "412068254",
+  "nr": "2-24-137256/8",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Vaidlus laenulepingu ja vastutustundliku laenamise üle, isikuandmed taustal",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1639,
+  "usd": 0.0454046,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 24654,
+  "dpHits": 0,
+  "per10k": 0.0
+ },
+ {
+  "id": "412441110",
+  "nr": "3-24-3207/10",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Vaidlus terviseandmete väljastamise tähtaegsuse/menetluse üle, mitte töötluse õiguspärasuse üle",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 2309,
+  "usd": 0.0416746,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 9988,
+  "dpHits": 0,
+  "per10k": 0.0
+ },
+ {
+  "id": "338526139",
+  "nr": "2-23-3432/3",
+  "vastus": "EI",
+  "kindlus": 0.97,
+  "pohjus": "Vaidlus tarbijakrediidist ja vastutustundlikust laenamisest, mitte andmekaitsest",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1815,
+  "usd": 0.0466926,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 26917,
+  "dpHits": 4,
+  "per10k": 1.5
+ },
+ {
+  "id": "433885833",
+  "nr": "5-25-26/18",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Käsitleb pankrotiõigust, isikuandmed puuduvad sisulise küsimusena",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1571,
+  "usd": 0.048140600000000006,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 20618,
+  "dpHits": 4,
+  "per10k": 1.9
+ },
+ {
+  "id": "396364800",
+  "nr": "2-24-126510/8",
+  "vastus": "EI",
+  "kindlus": 0.97,
+  "pohjus": "Võlgnevusvaidlus laenulepingust, andmekaitse pole teemaks",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1752,
+  "usd": 0.045868599999999995,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 18686,
+  "dpHits": 0,
+  "per10k": 0.0
+ },
+ {
+  "id": "359684879",
+  "nr": "2-22-131200/30",
+  "vastus": "EI",
+  "kindlus": 0.97,
+  "pohjus": "Vaidlus krediidilepingu ja vastutustundliku laenamise üle, mitte andmekaitse",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1741,
+  "usd": 0.046498599999999994,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 33353,
+  "dpHits": 2,
+  "per10k": 0.6
+ },
+ {
+  "id": "314612254",
+  "nr": "3-21-2893/17",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Käsitleb kehaõõnsuste läbiotsimist ja eraelu riivet, mitte andmetöötlust",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 3029,
+  "usd": 0.047078600000000005,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 17287,
+  "dpHits": 6,
+  "per10k": 3.5
+ },
+ {
+  "id": "350474429",
+  "nr": "3-22-2225/6",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Vaidlus puudutab läbiotsimist ja eraelu puutumatust, mitte andmetöötlust",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 2009,
+  "usd": 0.0457366,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 22552,
+  "dpHits": 8,
+  "per10k": 3.5
+ },
+ {
+  "id": "369084619",
+  "nr": "2-23-143746/8",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Vaidlus vastutustundliku laenamise üle, isikuandmed vaid taustal/anonüümitud",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1547,
+  "usd": 0.0467206,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 22440,
+  "dpHits": 2,
+  "per10k": 0.9
+ },
+ {
+  "id": "363241937",
+  "nr": "3-23-2715/10",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Tervishoiuvaidlus; kinnine menetlus eraelu kaitseks, andmetöötlust ei hinnata",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 2802,
+  "usd": 0.0458386,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 26992,
+  "dpHits": 11,
+  "per10k": 4.1
+ },
+ {
+  "id": "443509804",
+  "nr": "3-24-99/19",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Kaebus käsitleb ravimimanustamist, eraelu puutumatus mainitud kõrvalargumendina",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1911,
+  "usd": 0.0459246,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 30212,
+  "dpHits": 9,
+  "per10k": 3.0
+ },
+ {
+  "id": "389606633",
+  "nr": "2-23-150097/8",
+  "vastus": "EI",
+  "kindlus": 0.97,
+  "pohjus": "Vaidlus krediidilepingu vastutustundliku laenamise üle, mitte andmekaitse",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 2934,
+  "usd": 0.0456906,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 14700,
+  "dpHits": 1,
+  "per10k": 0.7
+ },
+ {
+  "id": "316742388",
+  "nr": "2-21-13917/19",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Tarbijakrediidivaidlus, isikuandmeid vaidluses ei käsitleta",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1527,
+  "usd": 0.0465706,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 26593,
+  "dpHits": 0,
+  "per10k": 0.0
+ },
+ {
+  "id": "423309738",
+  "nr": "3-24-3322/35",
+  "vastus": "EI",
+  "kindlus": 0.75,
+  "pohjus": "Menetluslik vaidlus riigiõigusabi/kaebuse üle, andmekaitse nõuded jäid kaebuse piiridest välja",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1919,
+  "usd": 0.0462386,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 31984,
+  "dpHits": 41,
+  "per10k": 12.8
+ },
+ {
+  "id": "360114211",
+  "nr": "3-24-39/12",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Vaidlus on teabenõude/menetlustähtaja üle, mitte andmekaitse õiguspärasuse hindamine",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1937,
+  "usd": 0.0472446,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 13217,
+  "dpHits": 3,
+  "per10k": 2.3
+ },
+ {
+  "id": "430687136",
+  "nr": "2-23-105844/15",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Vaidlus krediidilepingu vastutustundliku laenamise põhimõtte üle, mitte andmekaitse",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1762,
+  "usd": 0.0455986,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 11869,
+  "dpHits": 0,
+  "per10k": 0.0
+ },
+ {
+  "id": "366375280",
+  "nr": "3-24-591/3",
+  "vastus": "EI",
+  "kindlus": 0.75,
+  "pohjus": "Vaidlus haldusmenetluse pöördumise registreerimise üle, andmekaitse vaid kõrvalargument",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1766,
+  "usd": 0.0428886,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 10413,
+  "dpHits": 16,
+  "per10k": 15.4
+ },
+ {
+  "id": "413191296",
+  "nr": "2-25-1884/8",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Vaidlus kohtualluvuse üle, mitte andmetöötluse sisulisus",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 2323,
+  "usd": 0.0336426,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 6220,
+  "dpHits": 18,
+  "per10k": 28.9
+ },
+ {
+  "id": "379795390",
+  "nr": "2-24-10992/36",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Käsitleb tahtest olenematut psühhiaatrilist ravi, mitte andmekaitset",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1784,
+  "usd": 0.0463586,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 26459,
+  "dpHits": 6,
+  "per10k": 2.3
+ },
+ {
+  "id": "453573622",
+  "nr": "2-24-17085/12",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Käsitleb vastutustundlikku laenamist, mitte andmekaitset",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1601,
+  "usd": 0.0456106,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 24550,
+  "dpHits": 0,
+  "per10k": 0.0
+ },
+ {
+  "id": "436939562",
+  "nr": "2-25-7955/26",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Vaidlus laenulepingu kehtivuse ja identiteedivarguse üle, mitte andmekaitse",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 3029,
+  "usd": 0.0451906,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 31102,
+  "dpHits": 5,
+  "per10k": 1.6
+ },
+ {
+  "id": "390183186",
+  "nr": "3-24-1242/13",
+  "vastus": "EI",
+  "kindlus": 0.93,
+  "pohjus": "Käsitleb rahvusvahelist kaitset ja sissesõidukeeldu, anonüümimine on standardklausel",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1832,
+  "usd": 0.0464006,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 24824,
+  "dpHits": 8,
+  "per10k": 3.2
+ },
+ {
+  "id": "384764486",
+  "nr": "3-23-707/45",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Küsimus alasti läbiotsimise proportsionaalsusest, mitte andmetöötlusest",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 3305,
+  "usd": 0.0455626,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 26599,
+  "dpHits": 4,
+  "per10k": 1.5
+ },
+ {
+  "id": "370242999",
+  "nr": "3-23-1490/10",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Vaidlus terviseseisundi hindamise üle, andmed vaid taustal/anonüümimisklausel",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 3032,
+  "usd": 0.0471766,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 19215,
+  "dpHits": 2,
+  "per10k": 1.0
+ },
+ {
+  "id": "366015919",
+  "nr": "3-23-876/9",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Vaidlus pädevuse, mitte andmetöötluse õiguspärasuse üle",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 2803,
+  "usd": 0.0452626,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 11733,
+  "dpHits": 17,
+  "per10k": 14.5
+ },
+ {
+  "id": "341330855",
+  "nr": "1-22-6933/9",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Käsitleb jälitustoimingu lubade tutvustamist, mitte andmekaitset",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 2207,
+  "usd": 0.0470606,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 22568,
+  "dpHits": 20,
+  "per10k": 8.9
+ },
+ {
+  "id": "393414275",
+  "nr": "4-24-3979/8",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Andmete avalikustamise piiramise taotlus lükati tagasi menetluslikel põhjustel, sisulist hindamist ei tehtud",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 3496,
+  "usd": 0.0465246,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 12125,
+  "dpHits": 9,
+  "per10k": 7.4
+ },
+ {
+  "id": "361905819",
+  "nr": "3-22-1355/25",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Vangistuse/kartserikaristuse õiguspärasus, mitte andmekaitse",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1644,
+  "usd": 0.0464386,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 40078,
+  "dpHits": 8,
+  "per10k": 2.0
+ },
+ {
+  "id": "364141740",
+  "nr": "3-21-818/45",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Vaidlus vangla asutusesiseste dokumentide avaldamise, mitte isikuandmete kaitse üle",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1742,
+  "usd": 0.044718600000000004,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 42935,
+  "dpHits": 21,
+  "per10k": 4.9
+ },
+ {
+  "id": "416201995",
+  "nr": "1-25-3868/5",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Pangakaardiandmete väärkasutus varavastases kuriteos, mitte andmekaitseõiguslik hindamine",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 3345,
+  "usd": 0.0390186,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 8873,
+  "dpHits": 2,
+  "per10k": 2.3
+ },
+ {
+  "id": "361672469",
+  "nr": "3-24-39/15",
+  "vastus": "EI",
+  "kindlus": 0.85,
+  "pohjus": "Vaidlus menetlustähtaja ennistamise, mitte andmekaitse üle",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1742,
+  "usd": 0.0459486,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 15088,
+  "dpHits": 4,
+  "per10k": 2.7
+ },
+ {
+  "id": "338615476",
+  "nr": "2-22-146683/6",
+  "vastus": "EI",
+  "kindlus": 0.97,
+  "pohjus": "Tarbijakrediidivaidlus, isikuandmed vaid taustal",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1645,
+  "usd": 0.0461486,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 20989,
+  "dpHits": 0,
+  "per10k": 0.0
+ },
+ {
+  "id": "370486508",
+  "nr": "2-23-103424/9",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Vaidlus krediidilepingu ja vastutustundliku laenamise üle, mitte andmekaitse",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1837,
+  "usd": 0.0461426,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 26231,
+  "dpHits": 0,
+  "per10k": 0.0
+ },
+ {
+  "id": "387141611",
+  "nr": "2-23-144723/8",
+  "vastus": "EI",
+  "kindlus": 0.94,
+  "pohjus": "Vaidlus vastutustundliku laenamise üle, mitte andmekaitse",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1520,
+  "usd": 0.045652599999999995,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 17149,
+  "dpHits": 3,
+  "per10k": 1.7
+ },
+ {
+  "id": "436363265",
+  "nr": "3-25-1324/10",
+  "vastus": "EI",
+  "kindlus": 0.9,
+  "pohjus": "Vaidlus puudutab registriandmete väljavõtte edastamist, mitte andmekaitse õiguspärasust",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1887,
+  "usd": 0.0260906,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 2792,
+  "dpHits": 1,
+  "per10k": 3.6
+ },
+ {
+  "id": "441366564",
+  "nr": "3-24-2947/14",
+  "vastus": "EI",
+  "kindlus": 0.95,
+  "pohjus": "Vaidlus puudutab vangla kokkusaamiste korraldust, mitte andmekaitset",
+  "haiku": "JAH",
+  "haikuKindlus": 0.95,
+  "ms": 1710,
+  "usd": 0.046224600000000005,
+  "model": [
+   "claude-sonnet-5"
+  ],
+  "chars": 26055,
+  "dpHits": 5,
+  "per10k": 1.9
+ }
+]
