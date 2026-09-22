@@ -25,6 +25,8 @@
 import {appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync} from 'fs';
 import {join} from 'path';
 import {DATA} from '../lib/paths';
+import {execFile} from 'child_process';
+import {promisify} from 'util';
 import {HAIKU, SONNET, converse} from '../lib/bedrock';
 import {EMBED_RESERVE_USD, MAX_SPEND_USD, projectedClassifyCost, spend} from '../lib/limits';
 import {mapPool} from '../lib/pool';
@@ -32,7 +34,7 @@ import {getVerdicts, putVerdicts} from '../lib/store';
 import type {Candidate, Verdict} from '../types';
 import {localText} from './fetch';
 
-export const PROMPT_VERSION = 'rt-dp-v1';
+export const PROMPT_VERSION = 'rt-dp-v2';
 
 /** Confidence at or above which Haiku's answer stands on its own. */
 const ESCALATE_BELOW = 0.9;
@@ -48,15 +50,65 @@ const MAX_CHARS = 12_000;
 const CONCURRENCY = Number(process.env.CLASSIFY_CONCURRENCY ?? 12);
 
 
+const execFileAsync = promisify(execFile);
+
+/**
+ * Which model actually decides. 'bedrock' is the original Haiku-with-Sonnet-escalation path;
+ * 'claude-code' drives the Claude Code CLI headless, where the subscription makes a Sonnet-only run
+ * free and removes the Bedrock per-day token cap that stalled the earlier batches.
+ *
+ * Sonnet-only is an upgrade rather than a compromise: Haiku returned exactly 0.95 on 99.8% of rows,
+ * so the 0.9 escalation threshold never fired on merit and its positives went unreviewed. A 500-row
+ * agreement probe then found Sonnet rejecting 68% of them, and a 40-case adjudication put ~60% of
+ * those rejections in the right — decisions with no data-protection content at all.
+ */
+const BACKEND = process.env.CLS_BACKEND ?? 'bedrock';
+
+const CLAUDE_CODE_MODEL = process.env.CLS_CC_MODEL ?? 'sonnet';
+
+/**
+ * One isolated headless call. The flags matter: without them the CLI loads the user's CLAUDE.md,
+ * settings and MCP servers, and a global response-style rule would rewrite the classifier's output.
+ */
+const askClaudeCode = async (text: string): Promise<Answer | null> => {
+	const {stdout} = await execFileAsync(
+		'claude',
+		[
+			'-p',
+			PROMPT.replace('%TEXT%', excerpt(text)),
+			'--model',
+			CLAUDE_CODE_MODEL,
+			'--system-prompt',
+			'Sa oled klassifitseerija. Väljasta ainult nõutud JSON.',
+			'--setting-sources',
+			'',
+			'--strict-mcp-config',
+			'--mcp-config',
+			'{"mcpServers":{}}',
+			'--output-format',
+			'json',
+		],
+		{maxBuffer: 16 * 1024 * 1024, timeout: 300_000},
+	);
+	return parseAnswer(JSON.parse(stdout).result ?? '');
+};
+
 const JSONL = join(DATA, 'classified.jsonl');
 
 const PROMPT = `Allpool on väljavõte Eesti kohtulahendist.
 
-Küsimus: kas see lahend käsitleb SISULISELT isikuandmete kaitse / privaatsuse / andmetöötluse õiguslikku küsimust?
+Küsimus: kas see lahend kuulub Eesti andmekaitseõigusele spetsialiseerunud advokaadi praktikabaasi?
 
-JAH tähendab: vaidluse või põhjenduse osaks on isikuandmete töötlemise õiguspärasus, andmesubjekti õigused, andmete avaldamine/edastamine, jälgimine või eraelu puutumatuse riive õiguslik hindamine.
+Ole KAASAV. Kui kohus üldse hindab kellegi eraelu, privaatsust või isikuandmeid õiguslikult, siis on vastus JAH — ka siis, kui ta ei tsiteeri IKÜM-i ega IKS-i.
 
-EI tähendab: isikuandmed või kaamerasalvestis esinevad lahendis üksnes taustal või tõendina, ilma et nende töötlemise õiguspärasust vaidlustataks või hinnataks. Samuti EI, kui ainus seos on lahendi avaldamisel nimede asendamise või anonüümimise standardklausel.
+JAH, kui kehtib vähemalt üks:
+1. Hinnatakse isikuandmete töötlemise õiguspärasust, andmesubjekti õigusi (juurdepääs oma andmetele, sh terviseandmetele; kustutamine; vastuväide), andmete avaldamist, edastamist või jälgimist.
+2. Kaalutakse eraelu puutumatust või privaatsusriivet MÕNE TEISE õigusnormi alusel: põhiseaduse § 26, VÕS (au teotamine, ebaõigete andmete ümberlükkamine), AvTS (teabele juurdepääsu piiramine kellegi eraelu kaitseks), vangistusseadus (kambri või keha läbiotsimine, kirjavahetuse kontroll), jälitustoimingute seaduslikkus, ajakirjandusvabaduse ja eraelu tasakaal.
+3. Menetlus ise on andmekaitseasi, isegi kui lahend on puhtmenetluslik (pädevus, tähtaeg, lubatavus): hagi andmekaitseasutuse või vastutava töötleja vastu, kaebus Andmekaitse Inspektsiooni otsuse või tegevusetuse peale.
+
+EI ainult siis, kui isikuandmed on lahendis puhtalt taustal ja keegi ei vaidlusta ega kohus ei hinda nende töötlemist ega eraelu riivet — nt võlanõue, kus isikuandmeid mainitakse üksnes krediidivõimekuse kontekstis. Samuti EI, kui ainus seos on avaldamisel nimede anonüümimise standardklausel.
+
+Kahtluse korral vasta JAH.
 
 Vasta AINULT JSON-iga: {"vastus":"JAH"|"EI","kindlus":0.0-1.0,"pohjus":"<kuni 15 sona>"}
 
@@ -109,6 +161,21 @@ export const classifyOne = async (c: Candidate, text: string): Promise<Verdict> 
 		at: new Date().toISOString(),
 		chars: text.length,
 	};
+
+	if (BACKEND === 'claude-code') {
+		let lastError: unknown = 'unparseable answer';
+		for (let attempt = 0; attempt < 3; attempt++) {
+			const a = await askClaudeCode(text).catch((err) => {
+				lastError = err;
+				return null;
+			});
+			if (a) return {...base, ...a, model: `claude-code:${CLAUDE_CODE_MODEL}`, escalated: false};
+			await new Promise((r) => setTimeout(r, 2 ** attempt * 1000));
+		}
+		// Throw rather than record a verdict: a written row counts as classified forever, so a plan
+		// limit would otherwise turn every remaining decision into a silent false negative.
+		throw new Error(`claude-code failed 3 times on ${c.id}: ${String(lastError)}`);
+	}
 
 	const cheap = await askOnce(HAIKU, text);
 	if (cheap && cheap.kindlus >= ESCALATE_BELOW) {
@@ -193,11 +260,11 @@ export const classifyAll = async (rawCandidates: Candidate[]): Promise<ClassifyS
 	const projected = projectedClassifyCost(candidates.length - done.size);
 	const budget = MAX_SPEND_USD - EMBED_RESERVE_USD;
 	console.log(
-		`classify: ${candidates.length} candidates, ${done.size} already done; ` +
+		`classify [${BACKEND}]: ${candidates.length} candidates, ${done.size} already done; ` +
 			`projected $${projected.toFixed(2)}, spent so far $${spend.spent.toFixed(2)}; ` +
 			`budget $${budget} ($${MAX_SPEND_USD} less $${EMBED_RESERVE_USD} reserved for embedding)`,
 	);
-	if (projected + spend.spent > budget) {
+	if (BACKEND !== 'claude-code' && projected + spend.spent > budget) {
 		// Deterministic before the run starts: refuse rather than discover it 80% of the way through.
 		throw new Error(
 			`projected classify spend $${(projected + spend.spent).toFixed(2)} exceeds the ` +
