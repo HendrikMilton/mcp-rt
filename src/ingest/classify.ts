@@ -75,7 +75,8 @@ const askClaudeCode = async (text: string): Promise<Answer | null> => {
 		'claude',
 		[
 			'-p',
-			PROMPT.replace('%TEXT%', excerpt(text)),
+			// argv cannot carry NUL, and a few source texts contain one.
+			PROMPT.replace('%TEXT%', excerpt(text).replace(/\0/g, '')),
 			'--model',
 			CLAUDE_CODE_MODEL,
 			'--system-prompt',
