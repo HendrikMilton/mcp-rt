@@ -112,9 +112,28 @@ const MENETLUS_BY_NR_PREFIX: Record<string, Menetlus> = {
 	'5': 'pohiseadus',
 };
 
+/**
+ * Riigikohus numbers from before the 2013 scheme — 3-2-1-67-10 — all start with 3 and carry the
+ * chamber in the second segment instead: 1 criminal, 2 civil, 3 administrative, 4 constitutional.
+ * Read by the first digit alone, every one of them came out "haldus".
+ */
+const OLD_RIIGIKOHUS_RE = /^3-([1-4])-1-/;
+const OLD_RIIGIKOHUS_CHAMBER: Record<string, Menetlus> = {
+	'1': 'kriminaal',
+	'2': 'tsiviil',
+	'3': 'haldus',
+	'4': 'pohiseadus',
+};
+
+export const menetlusByNr = (nr: string): Menetlus => {
+	const old = OLD_RIIGIKOHUS_RE.exec(nr.trim());
+	if (old) return OLD_RIIGIKOHUS_CHAMBER[old[1]];
+	return MENETLUS_BY_NR_PREFIX[nr.trim()[0] ?? ''] ?? 'muu';
+};
+
 export const menetlusOf = (label: string, nr = ''): Menetlus => {
 	for (const [re, m] of MENETLUS_PATTERNS) if (re.test(label)) return m;
-	return MENETLUS_BY_NR_PREFIX[nr.trim()[0] ?? ''] ?? 'muu';
+	return menetlusByNr(nr);
 };
 
 /** Normalise one search hit. `channel` records which seed found it, for later recall analysis. */

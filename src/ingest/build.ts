@@ -59,9 +59,10 @@ const toDoc = (c: Candidate, v: Verdict, text: string, pages?: number): Doc => (
 	// carry tiers from a looser pattern than the one in rt.ts today.
 	tier: tierOf(c.court),
 	// A pool written by an older crawler stored 'muu' wherever RT left menetlusLiikKlVaartus empty,
-	// which is most of the maakohus and ringkonnakohus bulk. Fall back to the case-number prefix
-	// rather than re-crawl for a field the number already encodes.
-	menetlus: c.menetlus === 'muu' ? menetlusOf('', c.nr) : c.menetlus,
+	// which is most of the maakohus and ringkonnakohus bulk, and 'haldus' for every pre-2013
+	// Riigikohus number. Re-derive both from the case number rather than re-crawl for a field the
+	// number already encodes.
+	menetlus: c.menetlus === 'muu' || /^3-[1-4]-1-/.test(c.nr) ? menetlusOf('', c.nr) : c.menetlus,
 	date: c.date,
 	year: c.year,
 	categories: c.categories,
