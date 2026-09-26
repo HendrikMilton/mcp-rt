@@ -8,7 +8,8 @@
  * Each stage is resumable from disk (pool.json, data/text/, classified.jsonl), so a run that trips
  * a limit or dies halfway restarts from where it stopped rather than from the crawler.
  */
-import {existsSync, readFileSync, writeFileSync} from 'fs';
+import {createHash} from 'crypto';
+import {existsSync, mkdirSync, readFileSync, writeFileSync} from 'fs';
 import {join} from 'path';
 import {DATA} from '../lib/paths';
 import {EMBED_BATCH, EMBED_DIM, embedBatch} from '../lib/bedrock';
@@ -206,10 +207,28 @@ export const runIngest = async (
 			`${docs.length - reused} decisions`,
 	);
 
+	// Every embedded batch is kept on disk, keyed by its content, so a run stopped by Bedrock's
+	// per-day token cap resumes where it stopped instead of re-paying for everything before it.
+	const cacheDir = join(DATA, 'embed-cache');
+	mkdirSync(cacheDir, {recursive: true});
+	const cachedEmbed = async (batch: string[]): Promise<number[][]> => {
+		const file = join(cacheDir, `${createHash('sha1').update(batch.join('\0')).digest('hex')}.f32`);
+		if (existsSync(file)) {
+			const buf = readFileSync(file);
+			const all = new Float32Array(buf.buffer, buf.byteOffset, buf.length / 4);
+			if (all.length === batch.length * EMBED_DIM) {
+				return batch.map((_, i) => Array.from(all.subarray(i * EMBED_DIM, (i + 1) * EMBED_DIM)));
+			}
+		}
+		const vecs = await embedBatch(batch, 'search_document');
+		writeFileSync(file, Buffer.from(Float32Array.from(vecs.flat()).buffer));
+		return vecs;
+	};
+
 	let done = 0;
 	const embedded = (
 		await mapPool(batches, EMBED_CONCURRENCY, async (batch) => {
-			const vecs = await embedBatch(batch, 'search_document');
+			const vecs = await cachedEmbed(batch);
 			done += batch.length;
 			if (done % 2000 < EMBED_BATCH) {
 				console.log(`  embedded ${done}/${flat.length} chunks, $${spend.spent.toFixed(2)} spent`);
