@@ -47,7 +47,7 @@ const withRetry = async <T>(fn: (attempt: number) => Promise<T>): Promise<T> => 
 			return await fn(attempt);
 		} catch (err) {
 			const name = (err as {name?: string}).name ?? '';
-			if (attempt >= 10 || !/Throttling|TooManyRequests|ServiceUnavailable/i.test(name)) throw err;
+			if (attempt >= 10 || !/Throttling|TooManyRequests|ServiceUnavailable|InternalServer|ModelNotReady|TimeoutError|ECONNRESET|ENOTFOUND|ETIMEDOUT|EAI_AGAIN/i.test(name)) throw err;
 			await sleep(Math.min(2 ** attempt * 1000, 60_000) * (0.5 + Math.random()));
 		}
 	}
