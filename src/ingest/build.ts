@@ -35,7 +35,7 @@ const dequantize = (vectors: Int8Array, scales: Float32Array, dim: number, i: nu
 };
 
 /** Enough to keep the embed stage moving without tripping Embed v4's tokens-per-minute throttle. */
-const EMBED_CONCURRENCY = 3;
+const EMBED_CONCURRENCY = 6;
 
 /** Reuse a pool from disk when one is there; the monthly Lambda run always crawls fresh. */
 const loadPool = async (fresh: boolean): Promise<Candidate[]> => {

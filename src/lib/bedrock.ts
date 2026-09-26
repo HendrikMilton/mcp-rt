@@ -26,13 +26,25 @@ export const EMBED_BATCH = 32;
 const RETRY = {maxAttempts: 8, retryMode: 'adaptive' as const};
 const runtime = new BedrockRuntimeClient({region: REGION, ...RETRY});
 
+/**
+ * Same Embed v4 model behind three inference profiles, each with its own throughput and per-day
+ * token caps. Rotating through them roughly triples bulk-ingest throughput; vectors are identical
+ * whichever route served them, so the query side can stay on the EU profile.
+ */
+const EMBED_ROUTES = [
+	{client: runtime, modelId: EMBED_MODEL},
+	{client: runtime, modelId: 'global.cohere.embed-v4:0'},
+	{client: new BedrockRuntimeClient({region: 'us-east-1', ...RETRY}), modelId: 'us.cohere.embed-v4:0'},
+];
+let nextRoute = 0;
+
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /** The SDK's own retries cover brief spikes; a sustained ingest needs longer, wider spacing. */
-const withRetry = async <T>(fn: () => Promise<T>): Promise<T> => {
+const withRetry = async <T>(fn: (attempt: number) => Promise<T>): Promise<T> => {
 	for (let attempt = 0; ; attempt++) {
 		try {
-			return await fn();
+			return await fn(attempt);
 		} catch (err) {
 			const name = (err as {name?: string}).name ?? '';
 			if (attempt >= 10 || !/Throttling|TooManyRequests|ServiceUnavailable/i.test(name)) throw err;
@@ -45,10 +57,12 @@ export type InputType = 'search_document' | 'search_query';
 
 /** One InvokeModel call. `texts` must be at most EMBED_BATCH long. */
 export const embedBatch = async (texts: string[], inputType: InputType): Promise<number[][]> => {
-	const res = await withRetry(() =>
-		runtime.send(
+	// Each attempt, including retries after a throttle, moves on to the next route.
+	const res = await withRetry(() => {
+		const route = EMBED_ROUTES[nextRoute++ % EMBED_ROUTES.length];
+		return route.client.send(
 			new InvokeModelCommand({
-				modelId: EMBED_MODEL,
+				modelId: route.modelId,
 				contentType: 'application/json',
 				body: JSON.stringify({
 					texts,
@@ -58,8 +72,8 @@ export const embedBatch = async (texts: string[], inputType: InputType): Promise
 					truncate: 'END',
 				}),
 			}),
-		),
-	);
+		);
+	});
 	const parsed = JSON.parse(Buffer.from(res.body).toString('utf8'));
 	// Cohere reports billed tokens on the response; fall back to a chars/4 estimate if absent so the
 	// meter never silently stops counting.
