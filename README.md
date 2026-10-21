@@ -2,7 +2,7 @@
 
 Ingest pipeline for Estonian court decisions from Riigi Teataja, filtered to those that
 substantively concern data protection. It builds the second index served by the MCP endpoint in
-`../mcp-aki`, which exposes both corpora as separate tools under one connector.
+[mcp-aki](https://github.com/HendrikMilton/mcp-aki), which exposes both corpora as separate tools under one connector.
 
 ## The actual problem
 
